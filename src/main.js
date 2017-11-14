@@ -12,6 +12,7 @@ const AllProducts = require('./assets/js/components/all-products.vue');
 const CreateProduct = require('./assets/js/components/create-product.vue');
 const EditProduct = require('./assets/js/components/edit-product.vue');
 const DeleteProduct = require('./assets/js/components/delete-product.vue');
+const AccademicOffer = require('./assets/js/components/accademicOffer.vue');
 
 const routes = [
     {
@@ -33,6 +34,11 @@ const routes = [
         name: 'delete_product',
         path: '/products/delete/:id',
         component: DeleteProduct
+    },
+    {
+        name: 'accademic_offer_form',
+        path: '/accademicOffer',
+        component: AccademicOffer
     }
 ];
 var router = new VueRouter({ routes: routes, mode: 'history' });

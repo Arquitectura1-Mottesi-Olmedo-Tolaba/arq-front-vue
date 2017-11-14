@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var PRODUCTS_FILE = path.join(__dirname, 'src/assets/js/components/product-data.json');
+var ACCADEMICOFFER_FILE = path.join(__dirname, 'src/assets/js/components/accademicOffer-data.json');
 
 app.set('port', (process.env.PORT || 3000));
 
@@ -27,6 +28,16 @@ app.use(function(req, res, next) {
 
 app.get('/api/products', function(req, res) {
     fs.readFile(PRODUCTS_FILE, function(err, data) {
+        if (err) {
+            console.error(err);
+            process.exit(1);
+        }
+        res.json(JSON.parse(data));
+    });
+});
+
+app.get('/api/accademicOffer', function(req, res) {
+    fs.readFile(ACCADEMICOFFER_FILE, function(err, data) {
         if (err) {
             console.error(err);
             process.exit(1);

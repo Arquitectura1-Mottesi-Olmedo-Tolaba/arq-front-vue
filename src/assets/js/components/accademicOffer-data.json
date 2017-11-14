@@ -1,0 +1,53 @@
+{
+	"id": 1,
+	"name": "Tecnicatura Universitaria en Programación Informática",
+  "period": {"id": 1, "year": 2017, "quarter": 1},
+	"offers": [
+		{
+			"id": 1,
+      "subject": {"id": 1, "name": "Matemática"},
+			"courses": [
+  			{
+  				"id": 1,
+  				"professor": {"id": 1, "name": "p1"},
+  				"timelines": [
+  					{"id": 1, "day": "Lunes", "start": "18:00", "end": "21:00"},
+            {"id": 2, "day": "Miercoles", "start": "18:00", "end": "21:00"}
+  				]
+  			},
+        {
+  				"id": 4,
+  				"professor": {"id": 1, "name": "p1"},
+  				"timelines": [
+  					{"id": 7, "day": "Martes", "start": "18:00", "end": "21:00"},
+            {"id": 8, "day": "Jueves", "start": "18:00", "end": "21:00"}
+  				]
+  			}
+      ]
+    },
+		{
+			"id": 2,
+      "subject": {"id": 2, "name": "Introducción a la Programación"},
+      "courses": [
+        {
+          "professor": {"id": 2, "name": "p2"},
+		      "timelines": [
+            {"id": 3, "day": "Martes", "start": "18:00", "end": "21:00"},
+            {"id": 4, "day": "Jueves", "start": "18:00", "end": "21:00"}
+          ]
+        }
+      ]
+		},{
+				"id": 3,
+				"subject": {"id": 3, "name": "Organización de Computadoras"},
+        "courses": [
+          {
+            "professor": {"id": 3, "name": "p3"},
+            "timelines": [
+    					{"id": 5, "day": "Viernes", "start": "16:00", "end": "22:00"}
+    				]
+          }
+        ]
+    }
+  ]
+}
