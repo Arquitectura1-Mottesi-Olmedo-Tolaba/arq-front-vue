@@ -4,8 +4,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-var PRODUCTS_FILE = path.join(__dirname, 'src/assets/js/components/product-data.json');
-var ACCADEMICOFFER_FILE = path.join(__dirname, 'src/assets/js/components/accademicOffer-data.json');
+var PRODUCTS_FILE = path.join(__dirname, 'src/assets/storage/product-data.json');
+var ACCADEMICOFFER_FILE = path.join(__dirname, 'src/assets/storage/accademicOffer-data.json');
 
 app.set('port', (process.env.PORT || 3000));
 
