@@ -1,24 +1,39 @@
 <template lang="html">
   <div>
     <h1> {{accademicOffer.name}} - {{showPeriod()}}</h1>
+    <h2> {{student()}} </h2>
 
-    <sui-card-group :itemsPerRow="1">
-      <sui-card v-for="offer in offers">
-        <sui-card-content>
-          <sui-card-header>{{offer.subject.name}}</sui-card-header>
-          <sui-card-description v-for="course in offer.courses">
-            {{course.name}} - {{"Profesor: " + course.professor.name}} - {{createTimeline(course.timelines)}}
-          </sui-card-description>
-        </sui-card-content>
-        <sui-card-content extra>
-          <sui-container text-align="center">
-            <sui-button-group>
-              <sui-button v-for="option in offer.options" v-bind:class="stateButton(option, offer)" primary>{{option.description}}</sui-button>
-            </sui-button-group>
-          </sui-container>
-        </sui-card-content>
-      </sui-card>
-    </sui-card-group>
+    <sui-form>
+      <sui-card-group :itemsPerRow="1">
+        <sui-card v-for="offer in offers">
+          <sui-card-content>
+            <sui-card-header>
+              {{offer.subject.name}}
+            </sui-card-header>
+          </sui-card-content>
+          <sui-card-content>
+            <sui-card-description v-for="course in offer.courses">
+              {{course.name}} - {{"Profesor: " + course.professor.name}} - {{createTimeline(course.timelines)}}
+            </sui-card-description>
+          </sui-card-content>
+          <sui-card-content extra>
+            <sui-container text-align="center">
+              <sui-button-group>
+                <sui-button
+                  v-for="option in offer.options"
+                  v-on:click.native="applyOption(option, offer)"
+                  v-bind:class="stateButton(option, offer)"
+                  primary>{{option.description}}</sui-button>
+              </sui-button-group>
+            </sui-container>
+          </sui-card-content>
+        </sui-card>
+      </sui-card-group>
+      </br>
+      <sui-button
+        v-on:click.native="sendApplayOffer()"
+        type="submit">Enviar</sui-button>
+    </sui-form>
   </div>
 </template>
 
@@ -29,7 +44,8 @@ export default {
       return{
           accademicOffer: {},
           offers: [],
-          period: {}
+          period: {},
+          applyOffers:[]
       }
   },
 
@@ -63,6 +79,23 @@ export default {
       stateButton(state, offer)
       {
         return state.id === offer.selectedOption.id ? "active" : "basic"
+      },
+
+      applyOption(option, offer)
+      {
+        offer.selectedOption = option
+      },
+      student(){
+        return this.accademicOffer.student.name
+      },
+      sendApplayOffer(){
+        var applyOffers = this.accademicOffer.offers.map(offer => {
+          return {
+            subject: offer.subject,
+            option: offer.selectedOption
+          }
+        });
+        console.log(applyOffers);
       }
   }
 };
