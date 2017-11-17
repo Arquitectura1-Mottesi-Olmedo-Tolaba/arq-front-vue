@@ -7,14 +7,13 @@
         <sui-card-content>
           <sui-card-header>{{offer.subject.name}}</sui-card-header>
           <sui-card-description v-for="course in offer.courses">
-            {{"Profesor: " + course.professor.name}} - {{createTimeline(course.timelines)}}
+            {{course.name}} - {{"Profesor: " + course.professor.name}} - {{createTimeline(course.timelines)}}
           </sui-card-description>
         </sui-card-content>
         <sui-card-content extra>
           <sui-container text-align="center">
             <sui-button-group>
-              <sui-button basic positive>Ya la curse</sui-button>
-              <sui-button basic negative>No la voy a cursar</sui-button>
+              <sui-button v-for="option in offer.options" v-bind:class="stateButton(option, offer)" primary>{{option.description}}</sui-button>
             </sui-button-group>
           </sui-container>
         </sui-card-content>
@@ -29,7 +28,8 @@ export default {
   data(){
       return{
           accademicOffer: {},
-          offers: []
+          offers: [],
+          period: {}
       }
   },
 
@@ -44,6 +44,7 @@ export default {
           this.$http.get('http://localhost:3000/api/accademicOffer').then((response) => {
               this.accademicOffer = response.body;
               this.offers = this.accademicOffer.offers;
+              this.period = this.accademicOffer.period;
           }, (response) => {
 
           });
@@ -51,13 +52,17 @@ export default {
 
       showPeriod: function()
       {
-        var period = this.accademicOffer.period
-          return "Año: " + period.year + " - Cuatrimestre: " + period.quarter;
+          return "Año: " + this.period.year + " - Cuatrimestre: " + this.period.quarter;
       },
 
       createTimeline(timeline)
       {
         return timeline.reduce((a,b) => {return a + " " + b.day + " desde las "+ b.start + " hasta " + b.end + " | "}, "");
+      },
+
+      stateButton(state, offer)
+      {
+        return state.id === offer.selectedOption.id ? "active" : "basic"
       }
   }
 };
