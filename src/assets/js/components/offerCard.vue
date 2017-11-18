@@ -29,54 +29,19 @@ export default {
   name: 'offerCard',
   props:['offer'],
 
-  created: function()
-  {
-      this.fetchAccademicOffer();
-  },
-
   methods: {
-      fetchAccademicOffer: function()
-      {
-          this.$http.get('http://localhost:3000/api/accademicOffer').then((response) => {
-              this.accademicOffer = response.body;
-              this.offers = this.accademicOffer.offers;
-              this.period = this.accademicOffer.period;
-          }, (response) => {
-
-          });
-      },
-
-      showPeriod: function()
-      {
-          return "Año: " + this.period.year + " - Cuatrimestre: " + this.period.quarter;
-      },
-
-      createTimeline(timeline)
-      {
-        return timeline.reduce((a,b) => {return a + " " + b.day + " desde las "+ b.start + " hasta " + b.end + " | "}, "");
-      },
-
-      stateButton(state, offer)
-      {
-        return state.id === offer.selectedOption.id ? "active" : "basic"
-      },
-
-      applyOption(option, offer)
-      {
-        offer.selectedOption = option
-      },
-      student(){
-        return this.accademicOffer.student.name
-      },
-      sendApplayOffer(){
-        var applyOffers = this.accademicOffer.offers.map(offer => {
-          return {
-            subject: offer.subject,
-            option: offer.selectedOption
-          }
-        });
-        console.log(applyOffers);
-      }
+    createTimeline(timeline){
+      return timeline.reduce((a,b) => {return a + " " + b.day + " desde las "+ b.start + " hasta " + b.end + " | "}, "");
+    },
+    stateButton(state, offer){
+      return state.id === offer.selectedOption.id ? "active" : "basic"
+    },
+    applyOption(option, offer){
+      offer.selectedOption = option
+    },
+    student(){
+      return this.accademicOffer.student.name
+    }
   }
 };
 </script>
