@@ -1,18 +1,14 @@
 <template>
-  <sui-grid id="login-form" centered>
-    <sui-grid-row :columns="1">
-      <h2>Log-in to your account</h2>
-    </sui-grid-row>
-    <sui-form >
-      <sui-form-field>
-        <sui-input iconPosition="left" placeholder="E-mail" v-model="director.email" icon="user"/>
-      </sui-form-field>
-      <sui-form-field>
-        <sui-input iconPosition="left" placeholder="Password" v-model="director.password" icon="lock"/>
-      </sui-form-field>
-      <sui-button v-on:click.native="login" type="submit">Submit</sui-button>
-    </sui-form>
-  </sui-grid>
+  <sui-form>
+    <h2>Log-in to your account</h2>
+    <sui-form-field>
+      <sui-input iconPosition="left" placeholder="E-mail" v-model="director.email" icon="user"/>
+    </sui-form-field>
+    <sui-form-field>
+      <sui-input iconPosition="left" placeholder="Password" v-model="director.password" icon="lock"/>
+    </sui-form-field>
+    <sui-button primary v-on:click.native="login" type="submit">Login</sui-button>
+  </sui-form>
 </template>
 
 <script>

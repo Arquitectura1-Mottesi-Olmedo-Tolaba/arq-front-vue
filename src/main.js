@@ -10,19 +10,19 @@ Vue.use(SuiVue);
 
 import App from './App.vue'
 
-const LoginPage = require('./assets/js/components/loginPage.vue');
 const AllProducts = require('./assets/js/components/all-products.vue');
 const CreateProduct = require('./assets/js/components/create-product.vue');
 const EditProduct = require('./assets/js/components/edit-product.vue');
 const DeleteProduct = require('./assets/js/components/delete-product.vue');
 const AccademicOffer = require('./assets/js/components/accademicOffer.vue');
 const SubmitPage = require('./assets/js/components/submitPage.vue');
+const HomePage = require('./assets/js/components/homePage.vue');
 
 const routes = [
     {
-        name: 'login',
+        name: 'homePage',
         path: '/',
-        component: LoginPage
+        component: HomePage
     },
     {
         name: 'allProducts',
@@ -46,7 +46,7 @@ const routes = [
     },
     {
         name: 'accademic_offer_form',
-        path: '/accademicOffer',
+        path: '/accademicOffer/:id',
         component: AccademicOffer
     },
     {
