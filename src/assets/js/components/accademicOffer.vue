@@ -1,58 +1,80 @@
-<template>
-    <div id="accademicOffer">
-        <h1> {{accademicOffer.name}} - {{showPeriod()}}</h1>
 
-        <table class="table table-hover">
-            <thead>
-            <tr>
-                <td>Materia</td>
-                <td>Opciones</td>
-            </tr>
-            </thead>
+<template lang="html">
+  <div>
+    <h1> {{degreeName()}} - {{showPeriod()}}</h1>
+    <h2> {{student()}} </h2>
 
-            <tbody>
-                <tr v-for="offer in offers">
-                    <td>{{ offer.subject.name }}</td>
-                    <td>
-                      <span>TODO</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <sui-form>
+      <sui-card-group :itemsPerRow="1">
+        <template v-for="offer in offers()">
+          <offer-card v-bind:offer="offer"></offer-card>
+        </template>
+      </sui-card-group>
+      </br>
+      <router-link to="/submitPage">
+        <sui-button
+          v-on:click.native="sendApplayOffer()"
+          type="submit">Enviar
+        </sui-button>
+      </router-link>
+    </sui-form>
+  </div>
 </template>
 
 <script>
+const offerCard = require('./offerCard.vue');
+import AccademicOfferService from '../services/accademinOfferService';
 
-    export default{
-        data(){
-            return{
-                accademicOffer: {},
-                offers: []
-            }
-        },
-
-        created: function()
-        {
-            this.fetchAccademicOffer();
-        },
-
-        methods: {
-            fetchAccademicOffer: function()
-            {
-                this.$http.get('http://localhost:3000/api/accademicOffer').then((response) => {
-                    this.accademicOffer = response.body;
-                    this.offers = this.accademicOffer.offers;
-                }, (response) => {
-
-                });
-            },
-
-            showPeriod: function()
-            {
-              var period = this.accademicOffer.period
-                return "asd" //"Año:" ++ period.year ++ " - Cuatrimestre:" ++ period.quarter;
-            }
-        }
+export default {
+  name: 'AccademicOfferForm',
+  components:{'offer-card': offerCard},
+  data(){
+    return{
+      accademicOffer: {
+        student: {},
+        offers: [],
+        period: {}
+      }
     }
+  },
+
+  created: function()
+  {
+      this.fetchAccademicOffer();
+  },
+
+  methods: {
+    fetchAccademicOffer(){
+      new AccademicOfferService().fetchAccademicOffer().then( response => {
+          this.accademicOffer = response.body;
+      }, (response) => {
+
+      });
+    },
+    offers(){
+      return this.accademicOffer.offers
+    },
+    degreeName(){
+      return this.accademicOffer.name || "";
+    },
+    showPeriod(){
+        return "Año: " + this.accademicOffer.period.year || "" + " - Cuatrimestre: " + this.accademicOffer.period.quarter || "";
+    },
+    createTimeline(timeline){
+      return timeline.reduce((a,b) => {return a + " " + b.day + " desde las "+ b.start + " hasta " + b.end + " | "}, "");
+    },
+    student(){
+      return this.accademicOffer.student.name || ""
+    },
+    sendApplayOffer(){
+      var applyOffers = this.accademicOffer.offers.map(offer => {
+        return {
+          subject: offer.subject,
+          option: offer.selectedOption
+        }
+      });
+      console.log(applyOffers);
+    }
+  }
+};
 </script>

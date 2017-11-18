@@ -10,17 +10,23 @@ Vue.use(SuiVue);
 
 import App from './App.vue'
 
+const LoginPage = require('./assets/js/components/loginPage.vue');
 const AllProducts = require('./assets/js/components/all-products.vue');
 const CreateProduct = require('./assets/js/components/create-product.vue');
 const EditProduct = require('./assets/js/components/edit-product.vue');
 const DeleteProduct = require('./assets/js/components/delete-product.vue');
 const AccademicOffer = require('./assets/js/components/accademicOffer.vue');
-const AccademicOffer2 = require('./assets/js/components/accademicOffer2.vue');
+const SubmitPage = require('./assets/js/components/submitPage.vue');
 
 const routes = [
     {
-        name: 'all_products',
+        name: 'login',
         path: '/',
+        component: LoginPage
+    },
+    {
+        name: 'allProducts',
+        path: '/dashboard',
         component: AllProducts
     },
     {
@@ -44,9 +50,9 @@ const routes = [
         component: AccademicOffer
     },
     {
-        name: 'accademic_offer_form',
-        path: '/accademicOffer2',
-        component: AccademicOffer2
+        name: 'submit_form_page',
+        path: '/submitPage',
+        component: SubmitPage
     }
 ];
 var router = new VueRouter({ routes: routes, mode: 'history' });

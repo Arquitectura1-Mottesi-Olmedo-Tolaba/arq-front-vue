@@ -8,6 +8,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.4.3",
     "express": "^4.4.5",
     "semantic-ui-css": "^2.2.12",
