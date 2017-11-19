@@ -23,7 +23,7 @@
 
 <script>
 const offerCard = require('./offerCard.vue');
-import AccademicOfferService from '../services/accademinOfferService';
+import StudentService from '../services/studentService';
 
 export default {
   name: 'AccademicOfferForm',
@@ -38,14 +38,13 @@ export default {
     }
   },
 
-  created: function()
-  {
-      this.fetchAccademicOffer();
+  created: function(){
+    this.fetchAccademicOffer(this.$route.params.id);
   },
 
   methods: {
-    fetchAccademicOffer(){
-      new AccademicOfferService().fetchAccademicOffer().then( response => {
+    fetchAccademicOffer(accademicOfferCode){
+      StudentService.fetchAccademicOffer(accademicOfferCode).then( response => {
           this.accademicOffer = response.body;
       }, (response) => {
 

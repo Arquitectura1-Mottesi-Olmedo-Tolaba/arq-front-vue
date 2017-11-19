@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import StudentService from '../services/studentService';
+
 export default {
   name: 'AccademicOfferCodeForm',
   data(){
@@ -20,7 +22,13 @@ export default {
     },
   methods: {
     submitStudentCode(){
+      StudentService.existCode(this.student.code).then(this.successRedirect, this.error);
+    },
+    successRedirect(){
       this.$router.push('/accademicOffer/' + this.student.code);
+    },
+    error(){
+      console.log("error");
     }
   }
 };
