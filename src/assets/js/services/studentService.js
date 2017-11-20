@@ -21,8 +21,8 @@ var json = {
             name: "comision 1",
             professor: {id: 1, name: "p1"},
             timelines: [
-              {id: 1, "day": "Lunes", "start": "18:00", "end": "21:00"},
-               {id: 2, "day": "Miercoles", "start": "18:00", "end": "21:00"}
+              {id: 1, day: "Lunes", start: "18:00", end: "21:00"},
+               {id: 2, day: "Miercoles", start: "18:00", end: "21:00"}
             ]
           },
            {
@@ -30,36 +30,36 @@ var json = {
             name: "comision 2",
             professor: {id: 1, name: "p1"},
             timelines: [
-              {id: 7, "day": "Martes", "start": "18:00", "end": "21:00"},
-               {id: 8, "day": "Jueves", "start": "18:00", "end": "21:00"}
+              {id: 7, day: "Martes", start: "18:00", end: "21:00"},
+               {id: 8, day: "Jueves", start: "18:00", end: "21:00"}
             ]
           }
          ],
         selectedOption:
           {
             id: "todavia no la voy a cursar",
-            "description":"todavia no la voy a cursar"
+            description:"todavia no la voy a cursar"
           },
         options: [
           {
             id: "ya la curse",
-            "description":"ya la curse"
+            description:"ya la curse"
           },
           {
             id: "todavia no la voy a cursar",
-            "description":"todavia no la voy a cursar"
+            description:"todavia no la voy a cursar"
           },
           {
             id: "la quisiera cursar pero los horarios no me convencen",
-            "description":"la quisiera cursar pero los horarios no me convencen"
+            description:"la quisiera cursar pero los horarios no me convencen"
           },
           {
             id: "1",
-            "description":"comision 1"
+            description:"comision 1"
           },
           {
             id: "4",
-            "description":"comision 2"
+            description:"comision 2"
           }
         ]
        },
@@ -72,32 +72,32 @@ var json = {
             name: "comision 1",
              professor: {id: 2, name: "p2"},
             timelines: [
-               {id: 3, "day": "Martes", "start": "18:00", "end": "21:00"},
-               {id: 4, "day": "Jueves", "start": "18:00", "end": "21:00"}
+               {id: 3, day: "Martes", start: "18:00", end: "21:00"},
+               {id: 4, day: "Jueves", start: "18:00", end: "21:00"}
              ]
            }
          ],
         selectedOption:
           {
             id: "todavia no la voy a cursar",
-            "description":"todavia no la voy a cursar"
+            description:"todavia no la voy a cursar"
           },
         options: [
           {
             id: "ya la curse",
-            "description":"ya la curse"
+            description:"ya la curse"
           },
           {
             id: "todavia no la voy a cursar",
-            "description":"todavia no la voy a cursar"
+            description:"todavia no la voy a cursar"
           },
           {
             id: "la quisiera cursar pero los horarios no me convencen",
-            "description":"la quisiera cursar pero los horarios no me convencen"
+            description:"la quisiera cursar pero los horarios no me convencen"
           },
           {
             id: "3",
-            "description":"comision 1"
+            description:"comision 1"
           }
         ]
        },
@@ -110,31 +110,31 @@ var json = {
               name: "comision 1",
                professor: {id: 3, name: "p3"},
                timelines: [
-                {id: 5, "day": "Viernes", "start": "16:00", "end": "22:00"}
+                {id: 5, day: "Viernes", start: "16:00", end: "22:00"}
               ]
              }
            ],
           selectedOption:
             {
               id: "todavia no la voy a cursar",
-              "description":"todavia no la voy a cursar"
+              description:"todavia no la voy a cursar"
             },
           options: [
             {
               id: "ya la curse",
-              "description":"ya la curse"
+              description:"ya la curse"
             },
             {
               id: "todavia no la voy a cursar",
-              "description":"todavia no la voy a cursar"
+              description:"todavia no la voy a cursar"
             },
             {
               id: "la quisiera cursar pero los horarios no me convencen",
-              "description":"la quisiera cursar pero los horarios no me convencen"
+              description:"la quisiera cursar pero los horarios no me convencen"
             },
             {
               id: "5",
-              "description":"comision 1"
+              description:"comision 1"
             }
           ]
       }

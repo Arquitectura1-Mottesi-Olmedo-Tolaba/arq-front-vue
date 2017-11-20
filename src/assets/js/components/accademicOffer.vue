@@ -18,7 +18,6 @@
         </sui-button>
       </router-link>
     </sui-form>
-
   </div>
 
 </template>
