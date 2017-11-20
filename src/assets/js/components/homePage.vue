@@ -16,7 +16,7 @@ const AccademicOfferCodeForm = require('./AccademicOfferCodeForm.vue');
 const LoginForm = require('./LoginForm.vue');
 
 export default {
-  name: 'FormExample',
+  name: 'HomePage',
   components:{
     'accademic-offer-code-form': AccademicOfferCodeForm,
     'login-form': LoginForm

@@ -15,6 +15,7 @@
   import LoginService from '../services/loginService';
 
   export default{
+    name: 'LoginForm',
     data(){
         return{
             director: {
@@ -23,17 +24,15 @@
             }
         }
     },
-
     methods: {
       login: function(){
-          new LoginService().login({
-            email: this.director.email,
-            password: this.director.password
-          }).then((response) => {
-              this.$router.push('/dashboard');
-          }, (response) => {
-
-          });
+        new LoginService().login({
+          email: this.director.email,
+          password: this.director.password
+        }).then(
+          response => this.$router.push('/dashboard')
+          ,(response) => {}
+        );
       }
     }
   }

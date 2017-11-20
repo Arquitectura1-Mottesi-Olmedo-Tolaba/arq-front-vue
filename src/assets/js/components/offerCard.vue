@@ -28,10 +28,13 @@
 export default {
   name: 'offerCard',
   props:['offer'],
-
   methods: {
+    eachTimeline(timeline){
+      return timeline.day + " desde las "+ timeline.start + " hasta " + timeline.end
+    },
     createTimeline(timeline){
-      return timeline.reduce((a,b) => {return a + " " + b.day + " desde las "+ b.start + " hasta " + b.end + " | "}, "");
+      var timelineArray =  timeline.map(each => this.eachTimeline(each));
+      return timelineArray.join(" | ")
     },
     stateButton(state, offer){
       return state.id === offer.selectedOption.id ? "active" : "basic"

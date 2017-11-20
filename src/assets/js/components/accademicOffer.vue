@@ -1,9 +1,9 @@
-
 <template lang="html">
-  <div>
-    <h1> {{degreeName()}} - {{showPeriod()}}</h1>
-    <h2> {{student()}} </h2>
 
+  <div>
+    <h1> {{degreeName()}} </h1>
+    <p>{{showPeriod()}}</p>
+    <h2>{{student()}}</h2>
     <sui-form>
       <sui-card-group :itemsPerRow="1">
         <template v-for="offer in offers()">
@@ -18,8 +18,22 @@
         </sui-button>
       </router-link>
     </sui-form>
+
   </div>
+
 </template>
+
+<style>
+body{
+  background: #F5F5F5;
+  color: #333;
+}
+
+#page{
+  background: #FFF;
+  padding: 3rem;
+}
+</style>
 
 <script>
 const offerCard = require('./offerCard.vue');
@@ -44,23 +58,23 @@ export default {
 
   methods: {
     fetchAccademicOffer(accademicOfferCode){
-      StudentService.fetchAccademicOffer(accademicOfferCode).then( response => {
-          this.accademicOffer = response.body;
-      }, (response) => {
-
-      });
+      StudentService.fetchAccademicOffer(accademicOfferCode).then(
+        response => this.accademicOffer = response.body
+      , response => {}
+      );
+    },
+    isNotApprovedSubjects(subject){
+      return !this.accademicOffer.student.approvedSubjects
+        .some(approvedSubject => approvedSubject.name === subject.name);
     },
     offers(){
-      return this.accademicOffer.offers
+      return this.accademicOffer.offers.filter(offer => this.isNotApprovedSubjects(offer.subject))
     },
     degreeName(){
       return this.accademicOffer.name || "";
     },
     showPeriod(){
-        return "Año: " + this.accademicOffer.period.year || "" + " - Cuatrimestre: " + this.accademicOffer.period.quarter || "";
-    },
-    createTimeline(timeline){
-      return timeline.reduce((a,b) => {return a + " " + b.day + " desde las "+ b.start + " hasta " + b.end + " | "}, "");
+        return "Año: " + (this.accademicOffer.period.year || "") + " - Cuatrimestre: " + (this.accademicOffer.period.quarter || "");
     },
     student(){
       return this.accademicOffer.student.name || ""

@@ -1,20 +1,15 @@
 <template>
-    <div class="container">
-        <div id="page">
-            <transition name="fade">
-                <router-view></router-view>
-            </transition>
-        </div>
+  <sui-container>
+    <div id="page">
+      <transition>
+        <router-view></router-view>
+      </transition>
     </div>
+  </sui-container>
 </template>
 
 <script>
-
-    export default{
-        data(){
-            return{
-
-            }
-        }
-    }
+  export default{
+    data(){ return {} }
+  }
 </script>

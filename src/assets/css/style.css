@@ -1,11 +1,9 @@
-body
-{
-    background: #F5F5F5;
-    color: #333;
+body{
+  background: #F5F5F5;
+  color: #333;
 }
 
-#page
-{
-    background: #FFF;
-    padding: 3rem;
+#page{
+  background: #FFF;
+  padding: 3rem;
 }
