@@ -22,7 +22,7 @@ var json = {
             professor: {id: 1, name: "p1"},
             timelines: [
               {id: 1, day: "Lunes", start: "18:00", end: "21:00"},
-               {id: 2, day: "Miercoles", start: "18:00", end: "21:00"}
+              {id: 2, day: "Miercoles", start: "18:00", end: "21:00"}
             ]
           },
            {
@@ -31,7 +31,7 @@ var json = {
             professor: {id: 1, name: "p1"},
             timelines: [
               {id: 7, day: "Martes", start: "18:00", end: "21:00"},
-               {id: 8, day: "Jueves", start: "18:00", end: "21:00"}
+              {id: 8, day: "Jueves", start: "18:00", end: "21:00"}
             ]
           }
          ],

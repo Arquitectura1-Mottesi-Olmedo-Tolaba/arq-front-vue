@@ -10,50 +10,46 @@ Vue.use(SuiVue);
 
 import App from './App.vue'
 
-const AllProducts = require('./assets/js/components/all-products.vue');
-const CreateProduct = require('./assets/js/components/create-product.vue');
-const EditProduct = require('./assets/js/components/edit-product.vue');
-const DeleteProduct = require('./assets/js/components/delete-product.vue');
+const HomePage = require('./assets/js/components/homePage.vue');
+// Student
 const AccademicOffer = require('./assets/js/components/accademicOffer.vue');
 const SubmitPage = require('./assets/js/components/submitPage.vue');
-const HomePage = require('./assets/js/components/homePage.vue');
+// Director
+const DashboardDegree = require('./assets/js/components/dashboardDegree.vue');
+const EditDegree = require('./assets/js/components/editDegree.vue');
+const Degree = require('./assets/js/components/degree.vue');
 
 const routes = [
-    {
-        name: 'homePage',
-        path: '/',
-        component: HomePage
-    },
-    {
-        name: 'allProducts',
-        path: '/dashboard',
-        component: AllProducts
-    },
-    {
-        name: 'create_product',
-        path: '/products/create',
-        component: CreateProduct
-    },
-    {
-        name: 'edit_product',
-        path: '/products/edit/:id',
-        component: EditProduct
-    },
-    {
-        name: 'delete_product',
-        path: '/products/delete/:id',
-        component: DeleteProduct
-    },
-    {
-        name: 'accademic_offer_form',
-        path: '/accademicOffer/:id',
-        component: AccademicOffer
-    },
-    {
-        name: 'submit_form_page',
-        path: '/submitPage',
-        component: SubmitPage
-    }
+  {
+    name: 'homePage',
+    path: '/',
+    component: HomePage
+  },
+  {
+    name: 'accademic_offer_form',
+    path: '/accademicOffer/:id',
+    component: AccademicOffer
+  },
+  {
+    name: 'submit_form_page',
+    path: '/submitPage',
+    component: SubmitPage
+  },
+  {
+    name: 'dashboard_degree',
+    path: '/dashboard',
+    component: DashboardDegree
+  },
+  {
+    name: 'edit_degree',
+    path: '/editDegree/:id',
+    component: EditDegree
+  },
+  {
+    name: 'degree',
+    path: '/degree/:id',
+    component: Degree
+  }
 ];
 var router = new VueRouter({ routes: routes, mode: 'history' });
 new Vue(Vue.util.extend({ router }, App)).$mount('#app');
