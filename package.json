@@ -12,7 +12,8 @@
     "express": "^4.4.5",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-vue": "0.0.29",
-    "vue": "^2.0.1"
+    "vue": "^2.0.1",
+    "vue2-highcharts": "^1.1.5"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
