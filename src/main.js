@@ -2,8 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource';
 import SuiVue from 'semantic-ui-vue';
-//import 'semantic-ui-css/semantic.min.css';
 
+// global register
 Vue.use(VueRouter);
 Vue.use(VueResource);
 Vue.use(SuiVue);

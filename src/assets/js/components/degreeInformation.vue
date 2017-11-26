@@ -6,7 +6,7 @@
           {{subject.name}}
         </sui-accordion-title>
         <sui-accordion-content>
-          <subject-information v-bind:subject="subject" />
+          <subject-information :subject="subject"> </subject-information>
         </sui-accordion-content>
       </template>
     </sui-accordion>
@@ -15,6 +15,7 @@
 
 <script>
 const subjectInformation = require('./subjectInformation.vue');
+
 import DirectorService from '../services/directorService';
 
 export default {

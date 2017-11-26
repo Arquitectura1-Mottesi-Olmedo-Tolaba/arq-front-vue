@@ -1,16 +1,19 @@
 <template lang="html">
   <sui-grid divided="vertically">
-    <sui-grid-row :columns="2">
-      <sui-grid-column v-for="info in subject.info">
-        <p>{{createInfo(info)}}</p>
+    <sui-grid-row :columns="1">
+      <sui-grid-column>
+        <subject-highchart :info="subject.info" :refs="subject.id"/>
       </sui-grid-column>
     </sui-grid-row>
   </sui-grid>
 </template>
 
 <script>
+const subjectHighchart = require('./subjectHighchart.vue');
+
 export default {
   name: 'subjectInformation',
+  components:{'subject-highchart': subjectHighchart},
   props:['subject'],
   methods: {
     createInfo(info){

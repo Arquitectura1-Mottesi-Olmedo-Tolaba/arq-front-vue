@@ -17,12 +17,12 @@
   export default{
     name: 'LoginForm',
     data(){
-        return{
-            director: {
-              email: '',
-              password: ''
-            }
+      return{
+        director: {
+          email: '',
+          password: ''
         }
+      }
     },
     methods: {
       login: function(){
