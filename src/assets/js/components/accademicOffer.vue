@@ -1,6 +1,6 @@
 <template lang="html">
 
-  <div>
+  <div class="container-fluid">
     <h1> {{degreeName()}} </h1>
     <p>{{showPeriod()}}</p>
     <h2>{{student()}}</h2>
@@ -67,7 +67,9 @@ export default {
         .some(approvedSubject => approvedSubject.name === subject.name);
     },
     offers(){
-      return this.accademicOffer.offers.filter(offer => this.isNotApprovedSubjects(offer.subject))
+      var res = 
+       this.accademicOffer.offers.filter(offer => this.isNotApprovedSubjects(offer.subject))
+      return this.accademicOffer.offers;
     },
     degreeName(){
       return this.accademicOffer.name || "";

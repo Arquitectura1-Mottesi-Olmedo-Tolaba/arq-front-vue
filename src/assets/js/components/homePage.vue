@@ -12,7 +12,7 @@
 </template>
 
 <script>
-const AccademicOfferCodeForm = require('./AccademicOfferCodeForm.vue');
+const AccademicOfferCodeForm = require('./accademicOfferCodeForm.vue');
 const LoginForm = require('./LoginForm.vue');
 
 export default {

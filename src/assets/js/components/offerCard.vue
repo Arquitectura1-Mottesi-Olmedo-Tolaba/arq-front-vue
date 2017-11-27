@@ -11,7 +11,7 @@
       </sui-card-description>
     </sui-card-content>
     <sui-card-content extra>
-      <sui-container text-align="center">
+      <sui-container text-align="center" class="mx-3">
         <sui-button-group>
           <sui-button
             v-for="option in offer.options"
