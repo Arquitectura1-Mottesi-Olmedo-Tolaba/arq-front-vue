@@ -6,15 +6,14 @@ var json = [
 ];
 
 var jsonResponse = {body: json};
-var currentAccademicOfferJson = [
+var offersJson = [
   {
     id: 1,
     name: "Matemática",
     info: [
       {name: 'comision 1', capacity: 30, amount: 12},
       {name: 'comision 2', capacity: 30, amount: 34},
-      {name: "todavia no la voy a cursar", amount: 100},
-      {name: "la quisiera cursar pero los horarios no me convencen", amount: 67}
+      {name: "la quisiera cursar...", amount: 67}
     ]
   },
   {
@@ -22,8 +21,7 @@ var currentAccademicOfferJson = [
     name: "Introducción a la Programación",
     info: [
       {name: 'comision 1', capacity: 20, amount: 12},
-      {name: "todavia no la voy a cursar", amount: 100},
-      {name: "la quisiera cursar pero los horarios no me convencen", amount: 67}
+      {name: "la quisiera cursar...", amount: 67}
     ]
   },
   {
@@ -31,20 +29,28 @@ var currentAccademicOfferJson = [
     name: "Organización de Computadoras",
     info: [
       {name: 'comision 1', capacity: 30, amount: 12},
-      {name: "todavia no la voy a cursar", amount: 100},
-      {name: "la quisiera cursar pero los horarios no me convencen", amount: 67}
+      {name: "la quisiera cursar...", amount: 67}
     ]
   }
 ]
+var academicOffer = {
+  offers: offersJson,
+  day: "27/4/2017",
+  name: "Tecnicatura Universitaria en Programación Informática",
+  studentInformation: {
+    total: 1000,
+    completed: 400
+  }
+}
 
-var currentAccademicOfferJsonResponse = {body: currentAccademicOfferJson}
+var currentAcademicOfferJsonResponse = {body: academicOffer}
 
 var directorService = {
   fetchDegrees: function(){
     return Promise.resolve(jsonResponse);
   },
   fetchCurrentAccademicOffer: function(){
-    return Promise.resolve(currentAccademicOfferJsonResponse);
+    return Promise.resolve(currentAcademicOfferJsonResponse);
   }
 
 }

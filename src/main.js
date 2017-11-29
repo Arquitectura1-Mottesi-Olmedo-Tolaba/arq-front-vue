@@ -18,6 +18,7 @@ const SubmitPage = require('./assets/js/components/submitPage.vue');
 const DashboardDegree = require('./assets/js/components/dashboardDegree.vue');
 const EditDegree = require('./assets/js/components/editDegree.vue');
 const DegreeInformation = require('./assets/js/components/degreeInformation.vue');
+const DashboardAcademicOffer = require('./assets/js/components/directorView/dashboardAcademicOffer.vue');
 
 const routes = [
   {
@@ -48,7 +49,7 @@ const routes = [
   {
     name: 'degree',
     path: '/degree/:id',
-    component: DegreeInformation
+    component: DashboardAcademicOffer
   }
 ];
 var router = new VueRouter({ routes: routes, mode: 'history' });
