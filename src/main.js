@@ -10,15 +10,14 @@ Vue.use(SuiVue);
 
 import App from './App.vue'
 
-const HomePage = require('./assets/js/components/homePage.vue');
+const HomePage = require('./assets/js/components/homePage/homePage.vue');
 // Student
-const AccademicOffer = require('./assets/js/components/accademicOffer.vue');
-const SubmitPage = require('./assets/js/components/submitPage.vue');
+const AccademicOffer = require('./assets/js/components/student/accademicOffer.vue');
+const SubmitPage = require('./assets/js/components/student/submitPage.vue');
 // Director
-const DashboardDegree = require('./assets/js/components/dashboardDegree.vue');
-const EditDegree = require('./assets/js/components/editDegree.vue');
-const DegreeInformation = require('./assets/js/components/degreeInformation.vue');
-const DashboardAcademicOffer = require('./assets/js/components/directorView/dashboardAcademicOffer.vue');
+const DashboardDegree = require('./assets/js/components/directorView/dashboardDegree.vue');
+const DirectorHomePage = require('./assets/js/components/directorView/directorHomePage.vue');
+
 
 const routes = [
   {
@@ -39,17 +38,7 @@ const routes = [
   {
     name: 'dashboard_degree',
     path: '/dashboard',
-    component: DashboardDegree
-  },
-  {
-    name: 'edit_degree',
-    path: '/editDegree/:id',
-    component: EditDegree
-  },
-  {
-    name: 'degree',
-    path: '/degree/:id',
-    component: DashboardAcademicOffer
+    component: DirectorHomePage
   }
 ];
 var router = new VueRouter({ routes: routes, mode: 'history' });

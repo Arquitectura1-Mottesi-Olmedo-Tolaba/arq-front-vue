@@ -13,7 +13,7 @@
 
 <script>
 const AccademicOfferCodeForm = require('./accademicOfferCodeForm.vue');
-const LoginForm = require('./LoginForm.vue');
+const LoginForm = require('./loginForm.vue');
 
 export default {
   name: 'HomePage',

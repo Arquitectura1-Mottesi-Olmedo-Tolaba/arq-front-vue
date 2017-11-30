@@ -1,11 +1,9 @@
 <template>
-  <div class="ui center">
-    <sui-card style="width:100%">
-      <sui-card-content>
-        <sui-card-header>Fecha de cierre de la encuesta</sui-card-header>
-        <p>{{day}}</p>
-      </sui-card-content>
-    </sui-card>
+  <div class="container">
+    <sui-statistic in-group>
+      <sui-statistic-value>{{day}}</sui-statistic-value>
+      <sui-statistic-label>Fecha de cierre de la encuesta</sui-statistic-label>
+    </sui-statistic>
   </div>
 </template>
 
@@ -13,7 +11,6 @@
 
   export default {
     props:['day'],
-    methods: {
-    }
+    methods: {}
   };
 </script>

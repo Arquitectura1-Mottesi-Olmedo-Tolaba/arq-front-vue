@@ -1,7 +1,7 @@
 <template lang="html">
 
   <div class="container-fluid">
-    <h1> {{degreeName()}} </h1>
+    <h1>{{degreeName()}}</h1>
     <p>{{showPeriod()}}</p>
     <h2>{{student()}}</h2>
     <sui-form>
@@ -36,7 +36,7 @@ body{
 
 <script>
 const offerCard = require('./offerCard.vue');
-import StudentService from '../services/studentService';
+import StudentService from '../../services/studentService';
 
 export default {
   name: 'AccademicOfferForm',
@@ -67,7 +67,7 @@ export default {
         .some(approvedSubject => approvedSubject.name === subject.name);
     },
     offers(){
-      var res = 
+      var res =
        this.accademicOffer.offers.filter(offer => this.isNotApprovedSubjects(offer.subject))
       return this.accademicOffer.offers;
     },

@@ -1,11 +1,9 @@
 <template>
-  <sui-container>
-    <div id="page">
-      <transition>
-        <router-view></router-view>
-      </transition>
-    </div>
-  </sui-container>
+  <div id="page">
+    <transition>
+      <router-view></router-view>
+    </transition>
+  </div>
 </template>
 
 <script>

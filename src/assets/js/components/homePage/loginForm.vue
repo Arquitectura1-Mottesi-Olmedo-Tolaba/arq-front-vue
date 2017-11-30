@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import LoginService from '../services/loginService';
+  import LoginService from '../../services/loginService';
 
   export default{
     name: 'LoginForm',

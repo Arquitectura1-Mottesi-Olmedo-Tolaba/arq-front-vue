@@ -9,11 +9,11 @@
         <sui-grid-column :width="6">
           <div class="ui center aligned basic segment">
             <div>
-              <academic-offer-percentage :studentInformation="academicOffer.studentInformation"></academic-offer-percentage>
+              <close-academic-offer :day="academicOffer.day" />
             </div>
             <sui-divider />
             <div>
-              <close-academic-offer :day="academicOffer.day"></close-academic-offer>
+              <academic-offer-percentage :studentInformation="academicOffer.studentInformation" />
             </div>
             <sui-divider />
             <div>
@@ -43,6 +43,7 @@ export default {
     'close-academic-offer': CloseAcademicOffer,
     'send-email': SendEmail,
   },
+  props: ['degreeID'],
   data(){
     return{
       academicOffer: {
@@ -53,9 +54,10 @@ export default {
       }
     }
   },
-  created: function(){
-      this.fetchCurrentAccademicOffer(this.$route.params.id);
-    },
+  created(){
+    console.log(this.degreeID);
+    this.fetchCurrentAccademicOffer(this.degreeID);
+  },
   methods: {
     fetchCurrentAccademicOffer(degreeId){
       DirectorService.fetchCurrentAccademicOffer(degreeId).then(

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import StudentService from '../services/studentService';
+import StudentService from '../../services/studentService';
 
 export default {
   name: 'AccademicOfferCodeForm',

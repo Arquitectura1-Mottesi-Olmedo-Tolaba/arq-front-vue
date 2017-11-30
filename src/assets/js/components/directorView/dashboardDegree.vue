@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import DirectorService from '../services/directorService';
+import DirectorService from '../../services/directorService';
 
 export default {
   name: 'DashboardDegree',
@@ -33,11 +33,10 @@ export default {
       degrees: []
     }
   },
-
+  props: ['onChange'],
   created: function(){
     this.fetchDegrees();
   },
-
   methods: {
     fetchDegrees(){
       DirectorService.fetchDegrees().then(
@@ -46,10 +45,10 @@ export default {
       )
     },
     edit(degreeId){
-      this.$router.push("/editDegree/" + degreeId);
+      console.log("TODO: go to edit")
     },
     goToDegree(degreeId){
-      this.$router.push("/degree/" + degreeId);
+      this.onChange(degreeId)
     }
 
   }
