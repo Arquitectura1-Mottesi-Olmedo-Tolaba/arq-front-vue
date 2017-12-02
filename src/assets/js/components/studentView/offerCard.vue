@@ -41,9 +41,6 @@ export default {
     },
     applyOption(option, offer){
       offer.selectedOption = option
-    },
-    student(){
-      return this.accademicOffer.student.name
     }
   }
 };

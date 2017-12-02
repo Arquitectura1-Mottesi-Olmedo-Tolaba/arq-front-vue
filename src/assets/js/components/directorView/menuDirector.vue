@@ -14,7 +14,6 @@
     props:['home', 'currentPage', 'goHome'],
     methods: {
       currentPageIsHome(){
-        console.log(this.currentPage)
         return this.currentPage === this.home
       },
       logout(){

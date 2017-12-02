@@ -146,9 +146,9 @@ var studentService = {
   existCode: function(code){
     return code === '12345' ? Promise.resolve() : Promise.reject(false);
   },
-  fetchAccademicOffer: function(accademicOfferCode){
-    //return Vue.http.get('http://localhost:3000/api/accademicOffer');
-    return accademicOfferCode === '12345' ? Promise.resolve(jsonResponse) : Promise.reject(false);
+  fetchAcademicOffer: function(academicOfferCode){
+    //return Vue.http.get('http://localhost:3000/api/academicOffer');
+    return academicOfferCode === '12345' ? Promise.resolve(jsonResponse) : Promise.reject(false);
   }
 }
 

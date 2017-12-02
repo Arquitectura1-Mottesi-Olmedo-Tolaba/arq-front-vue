@@ -56,11 +56,11 @@ export default {
   },
   created(){
     console.log(this.degreeID);
-    this.fetchCurrentAccademicOffer(this.degreeID);
+    this.fetchCurrentAcademicOffer(this.degreeID);
   },
   methods: {
-    fetchCurrentAccademicOffer(degreeId){
-      DirectorService.fetchCurrentAccademicOffer(degreeId).then(
+    fetchCurrentAcademicOffer(degreeId){
+      DirectorService.fetchCurrentAcademicOffer(degreeId).then(
         response => this.academicOffer = response.body
       , response => {}
       );

@@ -27,7 +27,6 @@
         ]
       },
       dataTable(){
-        console.log(this.offers.reduce((array, offer)  => array.concat(this.createRows(offer.info, offer.name)), []));
         return this.offers.reduce((array, offer)  => array.concat(this.createRows(offer.info, offer.name)), [])
       },
       createRows(info, subjectName){

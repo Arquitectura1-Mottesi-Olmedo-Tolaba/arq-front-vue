@@ -49,7 +49,7 @@ var directorService = {
   fetchDegrees: function(){
     return Promise.resolve(jsonResponse);
   },
-  fetchCurrentAccademicOffer: function(){
+  fetchCurrentAcademicOffer: function(){
     return Promise.resolve(currentAcademicOfferJsonResponse);
   }
 

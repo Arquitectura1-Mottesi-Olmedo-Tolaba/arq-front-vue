@@ -39,11 +39,11 @@ const offerCard = require('./offerCard.vue');
 import StudentService from '../../services/studentService';
 
 export default {
-  name: 'AccademicOfferForm',
+  name: 'AcademicOfferForm',
   components:{'offer-card': offerCard},
   data(){
     return{
-      accademicOffer: {
+      academicOffer: {
         student: {},
         offers: [],
         period: {}
@@ -52,41 +52,42 @@ export default {
   },
 
   created: function(){
-    this.fetchAccademicOffer(this.$route.params.id);
+    this.fetchAcademicOffer(this.$route.params.id);
   },
 
   methods: {
-    fetchAccademicOffer(accademicOfferCode){
-      StudentService.fetchAccademicOffer(accademicOfferCode).then(
-        response => this.accademicOffer = response.body
+    fetchAcademicOffer(academicOfferCode){
+      StudentService.fetchAcademicOffer(academicOfferCode).then(
+        response => this.academicOffer = response.body
       , response => {}
       );
     },
     isNotApprovedSubjects(subject){
-      return !this.accademicOffer.student.approvedSubjects
+      return !this.academicOffer.student.approvedSubjects
         .some(approvedSubject => approvedSubject.name === subject.name);
     },
     offers(){
       var res =
-       this.accademicOffer.offers.filter(offer => this.isNotApprovedSubjects(offer.subject))
-      return this.accademicOffer.offers;
+       this.academicOffer.offers.filter(offer => this.isNotApprovedSubjects(offer.subject))
+      return this.academicOffer.offers;
     },
     degreeName(){
-      return this.accademicOffer.name || "";
+      return this.academicOffer.name || "";
     },
     showPeriod(){
-        return "Año: " + (this.accademicOffer.period.year || "") + " - Cuatrimestre: " + (this.accademicOffer.period.quarter || "");
+        return "Año: " + (this.academicOffer.period.year || "") + " - Cuatrimestre: " + (this.academicOffer.period.quarter || "");
     },
     student(){
-      return this.accademicOffer.student.name || ""
+      return this.academicOffer.student.name || ""
     },
     sendApplayOffer(){
-      var applyOffers = this.accademicOffer.offers.map(offer => {
+      var applyOffers = this.academicOffer.offers.map(offer => {
         return {
           subject: offer.subject,
           option: offer.selectedOption
         }
       });
+      console.log("TODO: cambiar el siguiente console.log");
       console.log(applyOffers);
     }
   }

@@ -12,8 +12,8 @@ import App from './App.vue'
 
 const HomePage = require('./assets/js/components/homePage/homePage.vue');
 // Student
-const AccademicOffer = require('./assets/js/components/student/accademicOffer.vue');
-const SubmitPage = require('./assets/js/components/student/submitPage.vue');
+const AcademicOffer = require('./assets/js/components/studentView/academicOffer.vue');
+const SubmitPage = require('./assets/js/components/studentView/submitPage.vue');
 // Director
 const DashboardDegree = require('./assets/js/components/directorView/dashboardDegree.vue');
 const DirectorHomePage = require('./assets/js/components/directorView/directorHomePage.vue');
@@ -26,9 +26,9 @@ const routes = [
     component: HomePage
   },
   {
-    name: 'accademic_offer_form',
-    path: '/accademicOffer/:id',
-    component: AccademicOffer
+    name: 'academic_offer_form',
+    path: '/academicOffer/:id',
+    component: AcademicOffer
   },
   {
     name: 'submit_form_page',

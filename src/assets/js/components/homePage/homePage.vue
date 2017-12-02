@@ -2,7 +2,7 @@
   <sui-grid :columns="3" divided centered>
     <sui-grid-row>
       <sui-grid-column>
-        <accademic-offer-code-form />
+        <academic-offer-code-form />
       </sui-grid-column>
       <sui-grid-column>
         <login-form />
@@ -12,13 +12,13 @@
 </template>
 
 <script>
-const AccademicOfferCodeForm = require('./accademicOfferCodeForm.vue');
+const AcademicOfferCodeForm = require('./academicOfferCodeForm.vue');
 const LoginForm = require('./loginForm.vue');
 
 export default {
   name: 'HomePage',
   components:{
-    'accademic-offer-code-form': AccademicOfferCodeForm,
+    'academic-offer-code-form': AcademicOfferCodeForm,
     'login-form': LoginForm
   }
 };
