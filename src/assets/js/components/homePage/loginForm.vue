@@ -5,7 +5,7 @@
       <sui-input iconPosition="left" placeholder="E-mail" v-model="director.email" icon="user"/>
     </sui-form-field>
     <sui-form-field>
-      <sui-input iconPosition="left" placeholder="Password" v-model="director.password" icon="lock"/>
+      <sui-input type="password" iconPosition="left" placeholder="Password" v-model="director.password" icon="lock"/>
     </sui-form-field>
     <sui-button primary v-on:click.native="login" type="submit">Login</sui-button>
   </sui-form>

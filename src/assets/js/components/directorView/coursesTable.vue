@@ -1,84 +1,71 @@
 <template lang="html">
   <div class="ui segment">
-    <h2>Materias:</h2>
-  <sui-table celled>
-    <sui-table-header>
-      <sui-table-row>
-        <sui-table-header-cell>Materia</sui-table-header-cell>
-        <sui-table-header-cell>Comisión</sui-table-header-cell>
-        <sui-table-header-cell>Cupos</sui-table-header-cell>
-        <sui-table-header-cell>Cupos Disponibles</sui-table-header-cell>
-      </sui-table-row>
-    </sui-table-header>
-    <sui-table-body>
-      <template v-for="offer in getCurrentOffer">
-        <template v-for="info in offer.info">
-          <sui-table-row v-bind:class="{ negative: (createAvailableCapacity(info) < 0) }">
-            <sui-table-cell>{{offer.name}}</sui-table-cell>
-            <sui-table-cell>{{info.name}}</sui-table-cell>
-            <sui-table-cell>{{createTotalCapacity(info)}}</sui-table-cell>
-            <sui-table-cell>{{createAvailableCapacity(info)}}</sui-table-cell>
-          </sui-table-row>
-        </template>
-      </template>
-    </sui-table-body>
-    <sui-table-footer>
-      <sui-table-row>
-        <sui-table-header-cell colspan="4">
-          <sui-menu v-sui-floated:right pagination>
-            <a is="sui-menu-item"
-              v-for="(item, index) in items()"
-              v-on:click.native="goTo(index)"
-              v-bind:class="{active: isActive(index)}">
-              {{index + 1}}
-            </a>
-          </sui-menu>
-        </sui-table-header-cell>
-      </sui-table-row>
-    </sui-table-footer>
-  </sui-table>
-</div>
+    <datatable
+      :title="'Materias:'"
+      :headers="this.currentHeader()"
+      :tableData="this.dataTable()"
+      :amountInPage="this.amountInPage()"
+      :searchFunction="this.searchFunction"
+      :negativeRowStyle="this.negativeRowStyleFunction"
+    />
+  </div>
 </template>
+
 <script>
+  const DataTable = require('./datatable/datatable.vue')
 
   export default {
     props:['offers'],
-    data(){
-      return {
-        currentOffer: [],
-        currentPage: 0,
-        amountInPage: 2
-      }
-    },
-    created(){
-      this.updateCurrentOffer()
-    },
+    components:{ 'datatable': DataTable },
     methods: {
+      currentHeader(){
+        return [
+          {key:'subject', title: 'Materia', sorted: this.subjectSorted },
+          {key:'course', title: 'Comisión'},
+          {key:'amount', title: 'Cupos'},
+          {key:'currentAmount', title: 'Cupos Disponibles', sorted: this.amountSorted}
+        ]
+      },
+      dataTable(){
+        console.log(this.offers.reduce((array, offer)  => array.concat(this.createRows(offer.info, offer.name)), []));
+        return this.offers.reduce((array, offer)  => array.concat(this.createRows(offer.info, offer.name)), [])
+      },
+      createRows(info, subjectName){
+        return info.map(information => {
+          return {
+            subject: subjectName,
+            course: information.name,
+            amount: this.createTotalCapacity(information),
+            currentAmount: this.createAvailableCapacity(information)
+          }
+        })
+      },
       createTotalCapacity(info){
         return info.capacity ? info.amount + "/" + info.capacity : info.amount
       },
       createAvailableCapacity(info){
         return info.capacity ? info.capacity - info.amount : " - "
       },
-      updateCurrentOffer(){
-        var starts = this.currentPage * this.amountInPage
-        var ends = starts + this.amountInPage
-        return this.offers.slice(starts, ends);
+      searchFunction(data, text){
+        return data.subject.toLowerCase().includes(text);
       },
-      items(){
-        return Array(Math.ceil(this.offers.length / this.amountInPage)).fill(1)
+      amountInPage(){
+        return '5'
       },
-      goTo(index){
-        this.currentPage = index;
-        this.updateCurrentOffer()
+      subjectSorted(a,b){
+        return a.subject.localeCompare(b.subject)
       },
-      isActive(index){
-        return index === this.currentPage
-      }
-    },
-    computed:{
-      getCurrentOffer(){
-        return this.updateCurrentOffer()
+      amountSorted(a,b){
+        if(typeof a.currentAmount == 'string'){
+          return -1
+        }
+        if(typeof b.currentAmount == 'string') {
+          return 1
+        }
+        return a.currentAmount < b.currentAmount
+      },
+      negativeRowStyleFunction(a){
+        return a.currentAmount < 0
       }
     }
   };
