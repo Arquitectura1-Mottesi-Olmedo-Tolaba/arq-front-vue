@@ -68,6 +68,7 @@
       updateCurrentData(){
         currentTableData = this.filterTableData();
         this.length = currentTableData.length
+        this.currentPage = (this.length / this.amountInPage) > this.currentPage ? this.currentPage : 0
         currentTableData = this.sortedTableData(currentTableData);
         var starts = this.currentPage * (this.amountInPage ? this.amountInPage : 0)
         var ends = starts + (this.amountInPage ? this.amountInPage : tableData.length)

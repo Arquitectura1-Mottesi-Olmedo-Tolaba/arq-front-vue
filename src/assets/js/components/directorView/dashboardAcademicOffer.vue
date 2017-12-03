@@ -26,7 +26,6 @@
   </div>
 </template>
 
-
 <script>
 const CoursesTable = require('./coursesTable.vue');
 const AcademicOfferPercentage = require('./academicOfferPercentage.vue');
@@ -55,7 +54,6 @@ export default {
     }
   },
   created(){
-    console.log(this.degreeID);
     this.fetchCurrentAcademicOffer(this.degreeID);
   },
   methods: {

@@ -1,53 +1,40 @@
 <template lang="html">
 
-  <div class="container-fluid">
-    <h1>{{degreeName()}}</h1>
-    <p>{{showPeriod()}}</p>
-    <h2>{{student()}}</h2>
-    <sui-form>
-      <sui-card-group :itemsPerRow="1">
-        <template v-for="offer in offers()">
-          <offer-card v-bind:offer="offer"></offer-card>
-        </template>
-      </sui-card-group>
-      </br>
+  <div>
+    <student-information :information="this.information()" />
+    <div class="ui segment">
+      <list-offer :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='2'/>
+    </div>
+    <div class="ui segment">
       <router-link to="/submitPage">
         <sui-button
           v-on:click.native="sendApplayOffer()"
           type="submit">Enviar
         </sui-button>
       </router-link>
-    </sui-form>
+    </div>
   </div>
-
 </template>
 
-<style>
-body{
-  background: #F5F5F5;
-  color: #333;
-}
-
-#page{
-  background: #FFF;
-  padding: 3rem;
-}
-</style>
-
 <script>
-const offerCard = require('./offerCard.vue');
+const ListOffer = require('./listOffers.vue');
+const StudentInformation = require('./studentInformation.vue');
 import StudentService from '../../services/studentService';
 
 export default {
   name: 'AcademicOfferForm',
-  components:{'offer-card': offerCard},
+  components:{
+    'list-offer': ListOffer,
+    'student-information':StudentInformation
+  },
   data(){
     return{
       academicOffer: {
         student: {},
         offers: [],
         period: {}
-      }
+      },
+      subjectName: ''
     }
   },
 
@@ -56,6 +43,13 @@ export default {
   },
 
   methods: {
+    information(){
+      return {
+        subject: this.academicOffer.name,
+        period: this.academicOffer.period,
+        student: this.academicOffer.student
+      }
+    },
     fetchAcademicOffer(academicOfferCode){
       StudentService.fetchAcademicOffer(academicOfferCode).then(
         response => this.academicOffer = response.body
@@ -67,18 +61,10 @@ export default {
         .some(approvedSubject => approvedSubject.name === subject.name);
     },
     offers(){
-      var res =
-       this.academicOffer.offers.filter(offer => this.isNotApprovedSubjects(offer.subject))
       return this.academicOffer.offers;
     },
-    degreeName(){
-      return this.academicOffer.name || "";
-    },
-    showPeriod(){
-        return "Año: " + (this.academicOffer.period.year || "") + " - Cuatrimestre: " + (this.academicOffer.period.quarter || "");
-    },
-    student(){
-      return this.academicOffer.student.name || ""
+    searchFunction(data, message){
+      return data.subject.name.toLowerCase().includes(message)
     },
     sendApplayOffer(){
       var applyOffers = this.academicOffer.offers.map(offer => {
@@ -87,7 +73,7 @@ export default {
           option: offer.selectedOption
         }
       });
-      console.log("TODO: cambiar el siguiente console.log");
+      console.log("TODO: cambiar");
       console.log(applyOffers);
     }
   }
