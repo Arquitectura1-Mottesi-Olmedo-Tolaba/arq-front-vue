@@ -22,7 +22,7 @@
         return [
           {key:'subject', title: 'Materia', sorted: this.subjectSorted },
           {key:'course', title: 'Comisión'},
-          {key:'amount', title: 'Cupos'},
+          {key:'amount', title: 'Cupos', tooltip:"Hell"},
           {key:'currentAmount', title: 'Cupos Disponibles', sorted: this.amountSorted}
         ]
       },
@@ -49,7 +49,7 @@
         return data.subject.toLowerCase().includes(text);
       },
       amountInPage(){
-        return '5'
+        return '15'
       },
       subjectSorted(a,b){
         return a.subject.localeCompare(b.subject)
@@ -61,7 +61,7 @@
         if(typeof b.currentAmount == 'string') {
           return 1
         }
-        return a.currentAmount < b.currentAmount
+        return a.currentAmount > b.currentAmount ? -1 : 1
       },
       negativeRowStyleFunction(a){
         return a.currentAmount < 0

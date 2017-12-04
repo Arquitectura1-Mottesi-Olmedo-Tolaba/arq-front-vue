@@ -83,7 +83,7 @@ app.post('/api/product/create', function(req, res) {
             price: req.body.price,
         };
         products.push(newProduct);
-        fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null, 4), function(err) {
+        fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null), function(err) {
             if (err) {
                 console.error(err);
                 process.exit(1);

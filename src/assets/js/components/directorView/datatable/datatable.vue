@@ -68,10 +68,10 @@
       updateCurrentData(){
         currentTableData = this.filterTableData();
         this.length = currentTableData.length
-        this.currentPage = (this.length / this.amountInPage) > this.currentPage ? this.currentPage : 0
+        this.currentPage = (this.length / parseInt(this.amountInPage)) > this.currentPage ? this.currentPage : 0
         currentTableData = this.sortedTableData(currentTableData);
-        var starts = this.currentPage * (this.amountInPage ? this.amountInPage : 0)
-        var ends = starts + (this.amountInPage ? this.amountInPage : tableData.length)
+        var starts = this.currentPage * (this.amountInPage ? parseInt(this.amountInPage) : 0)
+        var ends = starts + (this.amountInPage ? parseInt(this.amountInPage) : this.tableData.length)
         return currentTableData.slice(starts, ends);
       },
       filterTableData(){
@@ -91,7 +91,7 @@
         }
       },
       currentItems(){
-        return Array(Math.ceil(this.length / this.amountInPage)).fill(1)
+        return Array(Math.ceil(this.length / parseInt(this.amountInPage))).fill(1)
       },
       goTo(index){
         this.currentPage = index

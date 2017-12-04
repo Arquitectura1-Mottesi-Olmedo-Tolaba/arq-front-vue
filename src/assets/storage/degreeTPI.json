@@ -1,0 +1,1567 @@
+{
+    "name": "pepe",
+    "subjects": [
+        {
+            "id": 1,
+            "name": "Lectura y escritura académica"
+        },
+        {
+            "id": 2,
+            "name": "Matemática"
+        },
+        {
+            "id": 3,
+            "name": "Elementos de programación y lógica"
+        },
+        {
+            "id": 4,
+            "name": "Introducción a la Programación"
+        },
+        {
+            "id": 5,
+            "name": "Organización de Computadoras"
+        },
+        {
+            "id": 6,
+            "name": "Matemática I"
+        },
+        {
+            "id": 7,
+            "name": "Programación con Objetos I"
+        },
+        {
+            "id": 8,
+            "name": "Bases de Datos"
+        },
+        {
+            "id": 9,
+            "name": "Estructuras de Datos"
+        },
+        {
+            "id": 10,
+            "name": "Programación con Objetos II"
+        },
+        {
+            "id": 11,
+            "name": "Redes de Computadoras"
+        },
+        {
+            "id": 12,
+            "name": "Sistemas Operativos"
+        },
+        {
+            "id": 13,
+            "name": "Programación Concurrente"
+        },
+        {
+            "id": 14,
+            "name": "Matemática II"
+        },
+        {
+            "id": 15,
+            "name": "Elementos de Ingeniería de Software"
+        },
+        {
+            "id": 16,
+            "name": "Construcción de Interfaces de Usuario"
+        },
+        {
+            "id": 17,
+            "name": "Estrategias de Persistencia"
+        },
+        {
+            "id": 18,
+            "name": "Programación Funcional"
+        },
+        {
+            "id": 19,
+            "name": "Desarrollo de Aplicaciones"
+        },
+        {
+            "id": 20,
+            "name": "Laboratorio de Sistemas Operativos y Redes"
+        },
+        {
+            "id": 21,
+            "name": "Seguridad Informática"
+        },
+        {
+            "id": 22,
+            "name": "Bases de Datos II"
+        },
+        {
+            "id": 23,
+            "name": "Participación y Gestión en Proyectos de Software Libre"
+        },
+        {
+            "id": 24,
+            "name": "Introducción a las Arquitecturas de Software"
+        },
+        {
+            "id": 25,
+            "name": "Programación con Objetos III"
+        },
+        {
+            "id": 26,
+            "name": "Introducción a la Bioinformática"
+        },
+        {
+            "id": 27,
+            "name": "Políticas Públicas en la Sociedad de la Información y la Era Digital"
+        },
+        {
+            "id": 28,
+            "name": "Sistemas de Información Geográfica"
+        },
+        {
+            "id": 29,
+            "name": "Herramientas Declarativas en Programación"
+        },
+        {
+            "id": 30,
+            "name": "Introducción al Desarrollo de Videojuegos"
+        },
+        {
+            "id": 31,
+            "name": "Derechos de Autor y Derechos de Copia en la Era Digital"
+        }
+    ],
+    "professors": [
+        {
+            "id": 1,
+            "name": "ACEVEDO JHONG, DANIEL"
+        },
+        {
+            "id": 2,
+            "name": "AGURTO RONDOY, MIGUELVICENTE"
+        },
+        {
+            "id": 3,
+            "name": "ALCALÁ NEGRÓN, CHRISTIAN NELSON"
+        },
+        {
+            "id": 4,
+            "name": "ALMORA HERNANDEZ, RAUL EDUARDO"
+        },
+        {
+            "id": 5,
+            "name": "ALOSILLA VELAZCO VERA, JORGE "
+        },
+        {
+            "id": 6,
+            "name": "ALVA CAMPOS, VICTOR"
+        },
+        {
+            "id": 7,
+            "name": "AREVALO LOPEZ, JAVIER"
+        },
+        {
+            "id": 8,
+            "name": "ARIAS HERNANDEZ, ROSARIO"
+        },
+        {
+            "id": 9,
+            "name": "ARROYO RAMÍREZ, EFRAÍN "
+        },
+        {
+            "id": 10,
+            "name": "ALOCEN BARRERA, MARCO TULIO"
+        },
+        {
+            "id": 11,
+            "name": "BAIOCCHI URETA, CESAR"
+        },
+        {
+            "id": 12,
+            "name": "BAYLÓN ROJAS, ISELA FLOR"
+        },
+        {
+            "id": 13,
+            "name": "BEDOYA CASTILLO, LEONCIA"
+        },
+        {
+            "id": 14,
+            "name": "BEDREGAL CANALES, LUZ MARINA"
+        },
+        {
+            "id": 15,
+            "name": "BEJAR TORRES, RAMIRO ALBERTO"
+        },
+        {
+            "id": 16,
+            "name": "BENAVIDES ESPEJO, JAVIER"
+        },
+        {
+            "id": 17,
+            "name": "BOZA SOLIS, NELSON"
+        },
+        {
+            "id": 18,
+            "name": "CALLE BETANCOURT, CIELITO MERCEDES"
+        },
+        {
+            "id": 19,
+            "name": "CARAZA VILLEGAS, ISABEL FLORISA"
+        },
+        {
+            "id": 20,
+            "name": "CARRERA ABANTO, GIZELLA"
+        },
+        {
+            "id": 21,
+            "name": "CARRILLO SEGURA, ESTALINS"
+        },
+        {
+            "id": 22,
+            "name": "CARRIÓN NEIRA, JORGE AUGUSTO"
+        },
+        {
+            "id": 23,
+            "name": "CASAPIA VALDIVIA, GUILLERMO"
+        },
+        {
+            "id": 24,
+            "name": "CHANCOS MENDOZA, ZARITA"
+        },
+        {
+            "id": 25,
+            "name": "CHIRINOS LACOTERA, CARLOS"
+        },
+        {
+            "id": 26,
+            "name": "CORES MORENO, DORIS"
+        },
+        {
+            "id": 27,
+            "name": "CORTEZ LOZANO, MARIBEL CORINA"
+        },
+        {
+            "id": 28,
+            "name": "CRISPIN QUISPE, ANGEL"
+        },
+        {
+            "id": 29,
+            "name": "DE LOAYZA CONTERNO, ANTONIO"
+        },
+        {
+            "id": 30,
+            "name": "DIAZ SALINAS, ANA MARIA"
+        },
+        {
+            "id": 31,
+            "name": "DUEÑAS ARISTISABAL, ANTONIO"
+        }
+    ],
+    "academicOffer": [
+        {
+            "offers": [
+                {
+                    "subject": {
+                        "id": 1,
+                        "name": "Lectura y escritura académica"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 28,
+                            "name": "CRISPIN QUISPE, ANGEL"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 2,
+                        "name": "Matemática"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 17,
+                            "name": "BOZA SOLIS, NELSON"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 3,
+                        "name": "Elementos de programación y lógica"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 21,
+                            "name": "CARRILLO SEGURA, ESTALINS"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 4,
+                        "name": "Introducción a la Programación"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 31,
+                            "name": "DUEÑAS ARISTISABAL, ANTONIO"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 5,
+                        "name": "Organización de Computadoras"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 31,
+                            "name": "DUEÑAS ARISTISABAL, ANTONIO"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 6,
+                        "name": "Matemática I"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 1,
+                            "name": "ACEVEDO JHONG, DANIEL"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 7,
+                        "name": "Programación con Objetos I"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 23,
+                            "name": "CASAPIA VALDIVIA, GUILLERMO"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 8,
+                        "name": "Bases de Datos"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 26,
+                            "name": "CORES MORENO, DORIS"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 9,
+                        "name": "Estructuras de Datos"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 2,
+                            "name": "AGURTO RONDOY, MIGUELVICENTE"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 10,
+                        "name": "Programación con Objetos II"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 7,
+                            "name": "AREVALO LOPEZ, JAVIER"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 11,
+                        "name": "Redes de Computadoras"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 17,
+                            "name": "BOZA SOLIS, NELSON"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 12,
+                        "name": "Sistemas Operativos"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 27,
+                            "name": "CORTEZ LOZANO, MARIBEL CORINA"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 13,
+                        "name": "Programación Concurrente"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 4,
+                            "name": "ALMORA HERNANDEZ, RAUL EDUARDO"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 14,
+                        "name": "Matemática II"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 8,
+                            "name": "ARIAS HERNANDEZ, ROSARIO"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 15,
+                        "name": "Elementos de Ingeniería de Software"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 11,
+                            "name": "BAIOCCHI URETA, CESAR"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 16,
+                        "name": "Construcción de Interfaces de Usuario"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 24,
+                            "name": "CHANCOS MENDOZA, ZARITA"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 17,
+                        "name": "Estrategias de Persistencia"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 27,
+                            "name": "CORTEZ LOZANO, MARIBEL CORINA"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 18,
+                        "name": "Programación Funcional"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 3,
+                            "name": "ALCALÁ NEGRÓN, CHRISTIAN NELSON"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 19,
+                        "name": "Desarrollo de Aplicaciones"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 31,
+                            "name": "DUEÑAS ARISTISABAL, ANTONIO"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 20,
+                        "name": "Laboratorio de Sistemas Operativos y Redes"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 25,
+                            "name": "CHIRINOS LACOTERA, CARLOS"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 21,
+                        "name": "Seguridad Informática"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 7,
+                            "name": "AREVALO LOPEZ, JAVIER"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 22,
+                        "name": "Bases de Datos II"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 14,
+                            "name": "BEDREGAL CANALES, LUZ MARINA"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 23,
+                        "name": "Participación y Gestión en Proyectos de Software Libre"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 19,
+                            "name": "CARAZA VILLEGAS, ISABEL FLORISA"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 24,
+                        "name": "Introducción a las Arquitecturas de Software"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 26,
+                            "name": "CORES MORENO, DORIS"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 25,
+                        "name": "Programación con Objetos III"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 2,
+                            "name": "AGURTO RONDOY, MIGUELVICENTE"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 26,
+                        "name": "Introducción a la Bioinformática"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 28,
+                            "name": "CRISPIN QUISPE, ANGEL"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 27,
+                        "name": "Políticas Públicas en la Sociedad de la Información y la Era Digital"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 29,
+                            "name": "DE LOAYZA CONTERNO, ANTONIO"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 28,
+                        "name": "Sistemas de Información Geográfica"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 8,
+                            "name": "ARIAS HERNANDEZ, ROSARIO"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 29,
+                        "name": "Herramientas Declarativas en Programación"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 14,
+                            "name": "BEDREGAL CANALES, LUZ MARINA"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 30,
+                        "name": "Introducción al Desarrollo de Videojuegos"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 13,
+                            "name": "BEDOYA CASTILLO, LEONCIA"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 3,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 4,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                },
+                {
+                    "subject": {
+                        "id": 31,
+                        "name": "Derechos de Autor y Derechos de Copia en la Era Digital"
+                    },
+                    "courses": {
+                        "id": 1,
+                        "professor": {
+                            "id": 18,
+                            "name": "CALLE BETANCOURT, CIELITO MERCEDES"
+                        },
+                        "name": "Comision 1",
+                        "timeline": [
+                            {
+                                "id": 1,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "lunes"
+                            },
+                            {
+                                "id": 2,
+                                "startHour": "14:00",
+                                "endHour": "17:00",
+                                "day": "martes"
+                            }
+                        ]
+                    },
+                    "options": [
+                        {
+                            "id": 1,
+                            "description": "Ya la curse"
+                        },
+                        {
+                            "id": 2,
+                            "description": "No la voy a cursar"
+                        },
+                        {
+                            "id": 3,
+                            "description": "En otro horario"
+                        }
+                    ]
+                }
+            ],
+            "period": {
+                "year": 2017,
+                "quarter": 1
+            }
+        }
+    ]
+}
