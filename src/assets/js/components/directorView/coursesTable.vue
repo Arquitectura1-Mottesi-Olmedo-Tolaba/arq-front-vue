@@ -75,16 +75,16 @@
       subjectSorted(a,b){
         return a.subject.localeCompare(b.subject)
       },
-      amountSorted(a,b){
-        // if(a === ' - '){
-        //   return -1
-        // }
-        // if(b === ' - ') {
-        //   return 1
-        // }
-        //console.log(a);
-        //var realA = eval(a.split('/').join('-'));
-        //var realB = eval(b.split('/').join('-'));
+      amountSorted(key, a, b){
+         if(a[key] === ' - '){
+           return -1
+         }
+         if(b[key] === ' - ') {
+           return 1
+         }
+        console.log(a);
+        var realA = eval(a[key].split('/').join('-'));
+        var realB = eval(b[key].split('/').join('-'));
         return a > b ? -1 : 1
       },
       negativeRowStyleFunction(a){

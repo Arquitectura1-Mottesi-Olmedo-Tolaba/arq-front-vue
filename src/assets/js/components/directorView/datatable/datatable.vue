@@ -54,14 +54,14 @@
       return {
         currentPage: 0,
         message: '',
-        orderedBy: '',
+        orderedBy: [],
         orderedProperty: [],
         currentColumnSorted: 0,
         length: 0
       }
     },
     created(){
-      this.orderedProperty = Array(this.headers.length).fill("sort")
+      this.orderedProperty = Array(this.headers.length).fill("sort");
       this.length = this.tableData.length
     },
     methods: {
@@ -78,14 +78,14 @@
         return this.tableData.filter(data => this.searchFunction ? this.searchFunction(data, this.message) : true)
       },
       sortedTableData(currentTableData){
-        return this.orderedBy ? this.applySorted(currentTableData) : currentTableData
+        return this.orderedBy[this.currentColumnSorted] ? this.applySorted(currentTableData) : currentTableData
       },
       applySorted(currentTableData){
         switch (this.orderedProperty[this.currentColumnSorted]) {
           case "sort ascending":
-            return currentTableData.sort((a,b) => this.orderedBy(a,b))
+            return currentTableData.sort((a,b) => this.orderedBy[this.currentColumnSorted].fun(this.orderedBy[this.currentColumnSorted].key, a, b))
           case "sort descending":
-            return currentTableData.sort((a,b) => this.orderedBy(b,a))
+            return currentTableData.sort((a,b) => this.orderedBy[this.currentColumnSorted].fun(this.orderedBy[this.currentColumnSorted].key, b, a))
           default:
             return currentTableData
         }
@@ -100,7 +100,7 @@
         return index === this.currentPage
       },
       icon(index){
-        return this.orderedProperty[index]
+        return this.orderedProperty[index] ? this.orderedProperty[index] : ''
       },
       updateIcon(index){
         switch (this.orderedProperty[index]) {
@@ -122,7 +122,6 @@
         this.updateIcon(index);
         this.currentColumnSorted = -1
         this.currentColumnSorted = index
-        this.orderedBy = sortedFunction
       }
     },
     computed:{
@@ -131,6 +130,9 @@
       },
       items(){
         return this.currentItems()
+      },
+      updateOrderedBy(){
+        this.orderedBy = this.headers.map(header => header.sorted ? {key: header.key, fun:header.sorted} : '' )
       }
     }
   };
