@@ -18,7 +18,6 @@ const SubmitPage = require('./assets/js/components/studentView/submitPage.vue');
 const DashboardDegree = require('./assets/js/components/directorView/dashboardDegree.vue');
 const DirectorHomePage = require('./assets/js/components/directorView/directorHomePage.vue');
 
-
 const routes = [
   {
     name: 'homePage',
