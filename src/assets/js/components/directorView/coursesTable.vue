@@ -32,7 +32,7 @@
         var header = [];
         header.push({key:'subject', title: 'Materia', sorted: this.subjectSorted })
         header = header.concat(this.coursesHeader(amount));
-        header.push({key: 'ny', title: '#TN', fullName: 'Todavia no la voy a cursar', sorted: this.amountSorted});
+        header.push({key: 'ny', title: '#TN', tooltip: 'Todavia no la voy a cursar', sorted: this.amountSorted});
         return header
       },
       coursesHeader(amount){
@@ -40,7 +40,7 @@
           var currentKey = 'c' + index;
           var currentTitle = '#C'+ (index + 1);
           var currentFullName = "Comision " + (index + 1);
-          return { key: currentKey, title: currentTitle, fullNane: currentFullName, sorted: this.courseSorted };
+          return { key: currentKey, title: currentTitle, tooltip: currentFullName, sorted: this.courseSorted };
         })
       },
       currentData(amount){

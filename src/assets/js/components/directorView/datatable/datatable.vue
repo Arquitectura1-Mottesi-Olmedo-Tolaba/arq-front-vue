@@ -13,8 +13,8 @@
     <sui-table celled>
       <sui-table-header>
         <sui-table-row>
-          <sui-table-header-cell v-for="header in currentHeader">
-            {{header.title}}
+          <sui-table-header-cell v-for="header in currentHeader" >
+            <span :data-tooltip="header.tooltip">{{header.title}} </span>
             <a v-on:click="sorted(header)" v-if="header.sorted"><sui-icon :name="header.icon" /></a>
           </sui-table-header-cell>
         </sui-table-row>
@@ -83,9 +83,9 @@
       applySorted(currentTableData){
         switch (this.sortedBy.icon) {
           case "sort ascending":
-            return currentTableData.sort((a,b) => this.sortedBy.sorted(this.sortedBy.key, a, b))
-          case "sort descending":
             return currentTableData.sort((a,b) => this.sortedBy.sorted(this.sortedBy.key, b, a))
+          case "sort descending":
+            return currentTableData.sort((a,b) => this.sortedBy.sorted(this.sortedBy.key, a, b))
           default:
             return currentTableData
         }
