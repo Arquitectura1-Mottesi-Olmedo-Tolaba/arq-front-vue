@@ -18,9 +18,6 @@ const SubmitPage = require('./assets/js/components/studentView/submitPage.vue');
 const DashboardDegree = require('./assets/js/components/directorView/dashboardDegree.vue');
 const DirectorHomePage = require('./assets/js/components/directorView/directorHomePage.vue');
 
-// AUX Borrar
-const AuxDataTable = require('./assets/js/components/directorView/datatable/auxDataTable.vue');
-
 const routes = [
   {
     name: 'homePage',
@@ -41,11 +38,6 @@ const routes = [
     name: 'dashboard_degree',
     path: '/dashboard',
     component: DirectorHomePage
-  },
-  {
-    name: 'asd',
-    path: '/asd',
-    component: AuxDataTable
   }
 ];
 var router = new VueRouter({ routes: routes, mode: 'history' });
