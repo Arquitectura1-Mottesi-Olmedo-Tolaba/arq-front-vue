@@ -13,16 +13,16 @@
     <sui-table celled>
       <sui-table-header>
         <sui-table-row>
-          <sui-table-header-cell v-for="(header, index) in headers">
+          <sui-table-header-cell v-for="header in currentHeader">
             {{header.title}}
-            <a v-on:click="sorted(header.sorted, index)" v-if="header.sorted"><sui-icon :name="icon(index)" /></a>
+            <a v-on:click="sorted(header)" v-if="header.sorted"><sui-icon :name="header.icon" /></a>
           </sui-table-header-cell>
         </sui-table-row>
       </sui-table-header>
       <sui-table-body>
         <template v-for="data in getCurrentData">
-          <sui-table-row>
-            <sui-table-cell v-for="header in headers" :class="{negative: negativeRowStyle(data)}">{{data[header.key]}}</sui-table-cell>
+          <sui-table-row :class="{negative: negativeRowStyle(data)}">
+            <sui-table-cell v-for="header in currentHeader">{{data[header.key]}}</sui-table-cell>
           </sui-table-row>
         </template>
       </sui-table-body>
@@ -52,17 +52,17 @@
     props:['title','headers', 'tableData', 'amountInPage', 'searchFunction', 'negativeRowStyle'],
     data(){
       return {
-        currentPage: 0,
         message: '',
-        orderedBy: [],
-        orderedProperty: [],
-        currentColumnSorted: 0,
-        length: 0
+        currentPage: 0,
+        currentHeader: [],
+        length: 0,
+        sortedBy: {}
       }
     },
     created(){
       this.orderedProperty = Array(this.headers.length).fill("sort");
-      this.length = this.tableData.length
+      this.length = this.tableData.length;
+      this.currentHeader = this.createHeader()
     },
     methods: {
       updateCurrentData(){
@@ -78,14 +78,14 @@
         return this.tableData.filter(data => this.searchFunction ? this.searchFunction(data, this.message) : true)
       },
       sortedTableData(currentTableData){
-        return this.orderedBy[this.currentColumnSorted] ? this.applySorted(currentTableData) : currentTableData
+        return this.sortedBy ? this.applySorted(currentTableData) : currentTableData
       },
       applySorted(currentTableData){
-        switch (this.orderedProperty[this.currentColumnSorted]) {
+        switch (this.sortedBy.icon) {
           case "sort ascending":
-            return currentTableData.sort((a,b) => this.orderedBy[this.currentColumnSorted].fun(this.orderedBy[this.currentColumnSorted].key, a, b))
+            return currentTableData.sort((a,b) => this.sortedBy.sorted(this.sortedBy.key, a, b))
           case "sort descending":
-            return currentTableData.sort((a,b) => this.orderedBy[this.currentColumnSorted].fun(this.orderedBy[this.currentColumnSorted].key, b, a))
+            return currentTableData.sort((a,b) => this.sortedBy.sorted(this.sortedBy.key, b, a))
           default:
             return currentTableData
         }
@@ -102,26 +102,39 @@
       icon(index){
         return this.orderedProperty[index] ? this.orderedProperty[index] : ''
       },
-      updateIcon(index){
-        switch (this.orderedProperty[index]) {
+      updateIcon(header){
+        switch (header.icon) {
           case "sort ascending":
-            this.orderedProperty = Array(this.headers.length).fill("sort")
-            this.orderedProperty[index] = "sort descending"
+            this.refreshAllIcons()
+            header.icon = "sort descending"
             break;
           case "sort descending":
-            this.orderedProperty = Array(this.headers.length).fill("sort")
-            this.orderedProperty[index] = "sort ascending"
+            this.refreshAllIcons()
+            header.icon = "sort ascending"
             break;
           default:
-            this.orderedProperty = Array(this.headers.length).fill("sort")
-            this.orderedProperty[index] = "sort descending"
+            this.refreshAllIcons()
+            header.icon = "sort descending"
             break;
         }
       },
-      sorted(sortedFunction, index){
-        this.updateIcon(index);
-        this.currentColumnSorted = -1
-        this.currentColumnSorted = index
+      refreshAllIcons(){
+        this.currentHeader.forEach(header => header.icon = "sort");
+      },
+      sorted(header){
+        this.updateIcon(header);
+        this.sortedBy = header
+      },
+      createHeader(){
+        return this.headers.map(header => {
+          return {
+            'key': header.key,
+            'sorted': header.sorted,
+            'title': header.title,
+            'tooltip': header.tooltip,
+            'icon': 'sort'
+          }
+        });
       }
     },
     computed:{
@@ -130,9 +143,6 @@
       },
       items(){
         return this.currentItems()
-      },
-      updateOrderedBy(){
-        this.orderedBy = this.headers.map(header => header.sorted ? {key: header.key, fun:header.sorted} : '' )
       }
     }
   };

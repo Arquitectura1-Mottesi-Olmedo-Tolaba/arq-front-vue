@@ -1,12 +1,12 @@
 <template lang="html">
   <div class="ui segment">
-    <datatable
+    <datatable v-if="amount != 0"
       :title="'Materias:'"
-      :headers="this.computedHeader"
+      :headers="this.computedHeaders"
       :tableData="this.computedData"
-      :amountInPage="this.amountInPage()"
+      :amountInPage="this.amountInPage"
       :searchFunction="this.searchFunction"
-      :negativeRowStyle="this.negativeRowStyleFunction"
+      :negativeRowStyle="this.styleRow"
     />
   </div>
 </template>
@@ -19,41 +19,39 @@
   export default {
     props:['offers'],
     components:{ 'datatable': DataTable },
+    data(){
+      return {
+        tableData: [],
+        amountInPage: 15,
+        searchFunction: this.searchFun,
+        styleRow: this.negativeRowStyleFunction
+      }
+    },
     methods: {
-      currentCourses(){
-        courses === 0 ? courses = this.countCourses() : courses;
-        return courses
-      },
-      countCourses(){
-        return this.offers.reduce((maxCourses, offer) => {
-          return maxCourses < offer.info.length -1 ? offer.info.length -1 : maxCourses
-        }, 0)
-      },
-      currentHeader(){
+      currentHeader(amount){
         var header = [];
         header.push({key:'subject', title: 'Materia', sorted: this.subjectSorted })
-        this.coursesHeader(header);
-        console.log(this.currentCourses());
-        header.push({key: 'ny', title: '#TN', fullName: 'Todavia no la voy a cursar'});
+        header = header.concat(this.coursesHeader(amount));
+        header.push({key: 'ny', title: '#TN', fullName: 'Todavia no la voy a cursar', sorted: this.amountSorted});
         return header
       },
-      coursesHeader(header){
-        return Array(this.currentCourses()).fill(1).forEach((value, index) => {
+      coursesHeader(amount){
+        return Array(amount).fill(1).map((value, index) => {
           var currentKey = 'c' + index;
           var currentTitle = '#C'+ (index + 1);
           var currentFullName = "Comision " + (index + 1);
-          header.push({ key: currentKey, title: currentTitle, fullNane: currentFullName, sorted: this.amountSorted });
+          return { key: currentKey, title: currentTitle, fullNane: currentFullName, sorted: this.courseSorted };
         })
       },
-      dataTable(){
-        return this.offers.reduce((array, offer)  => array.concat(this.createRows(offer.info, offer.name)), [])
+      currentData(amount){
+        return this.offers.reduce((array, offer)  => array.concat(this.createRows(amount, offer.info, offer.name)), [])
       },
-      createRows(info, subjectName){
+      createRows(amount, info, subjectName){
         var object = { subject: subjectName };
-        if(info.length === 0) {} else{
+        if(info.length === 0) { } else {
           var infoAux = info;
           object['ny'] = infoAux.pop().amount;
-          Array(this.currentCourses()).fill(1).forEach((value, index) => {
+          Array(amount).fill(1).forEach((value, index) => {
             var key = 'c'+index;
             object[key] = (info[index] ? ("" + info[index].amount + "/" + info[index].capacity) : " - ")
           })
@@ -66,37 +64,45 @@
       createAvailableCapacity(info){
         return info.capacity ? info.capacity - info.amount : " - "
       },
-      searchFunction(data, text){
+      searchFun(data, text){
         return data.subject.toLowerCase().includes(text);
       },
-      amountInPage(){
-        return '15'
+      subjectSorted(key, a, b){
+        return a[key].localeCompare(b[key])
       },
-      subjectSorted(a,b){
-        return a.subject.localeCompare(b.subject)
-      },
-      amountSorted(key, a, b){
+      courseSorted(key, a, b){
          if(a[key] === ' - '){
            return -1
          }
          if(b[key] === ' - ') {
            return 1
          }
-        console.log(a);
-        var realA = eval(a[key].split('/').join('-'));
-        var realB = eval(b[key].split('/').join('-'));
-        return a > b ? -1 : 1
+        var realA = eval(a[key].split('/').reverse().join('-'));
+        var realB = eval(b[key].split('/').reverse().join('-'));
+        return realA > realB ? -1 : 1
       },
-      negativeRowStyleFunction(a){
-        return a.currentAmount < 0
+      amountSorted(key, a, b){
+        return a[key] > b[key] ? -1 : 1
+      },
+      negativeRowStyleFunction(data){
+        return Object.keys(data).filter(key => key[0] === 'c' && key.length === 2).reduce((res, key) => res ? true : this.isNegative(data[key]), false)
+      },
+      isNegative(value){
+        if(value === ' - '){ return false }
+        return eval(value.split('/').reverse().join('-')) < 0
       }
     },
     computed: {
-      computedHeader(){
-        return this.currentHeader()
+      amount(){
+        return this.offers.reduce((res, offer) => offer.info.length -1 > res ? offer.info.length -1 : res, 0);
+      },
+      computedHeaders(){
+        var amount = this.amount;
+        return this.currentHeader(amount)
       },
       computedData(){
-        return this.dataTable()
+        var amount = this.amount;
+        return this.currentData(amount)
       }
     }
   };
