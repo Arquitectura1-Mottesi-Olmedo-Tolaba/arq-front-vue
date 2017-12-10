@@ -1,16 +1,50 @@
 <template lang="html">
-
   <div>
     <student-information :information="this.information()" />
-    <div class="ui segment">
-      <list-offer :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='2'/>
+
+    <div class="ui three top attached steps">
+      <a class="step" :class="{active: is('offer')}" v-on:click="goTo('offer')">
+        <i class="browser icon"></i>
+        <div class="content">
+          <div class="title">Materias</div>
+        </div>
+      </a>
+      <a class="step" :class="{active: is('suggestions')}" v-on:click="goTo('suggestions')">
+        <i class="italic icon" ></i>
+        <div class="content">
+          <div class="title">Sugerencias?</div>
+        </div>
+      </a>
+      <a class="step" :class="{active: is('send')}" v-on:click="goTo('send')">
+        <i class="send icon"></i>
+        <div class="content">
+          <div class="title">Enviar</div>
+        </div>
+      </a>
     </div>
-    <div class="ui segment">
-      <router-link to="/submitPage">
-        <sui-button
-          v-on:click.native="sendApplayOffer()"
-          type="submit">Enviar
-        </sui-button>
+    <div class="ui attached segment">
+      <list-offer v-if="is('offer')" :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='2'/>
+      <suggestions-offer v-if="is('suggestions')" :message="message" @change="changeMessage" :amountInPage='2'/>
+      <send-offer v-if="is('send')" :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='2'/>
+    </div>
+    <div class="ui bottom attached steps">
+      <a v-if="is('offer')" class="step" v-on:click="goTo('suggestions')">
+        <i class="Arrow Circle Outline Right icon"></i>
+        <div class="content">
+          <div>Siguiente</div>
+        </div>
+      </a>
+      <a v-if="is('suggestions')" class="step" v-on:click="goTo('send')">
+        <i class="Arrow Circle Outline Right icon"></i>
+        <div class="content">
+          <div>Siguiente</div>
+        </div>
+      </a>
+      <router-link v-if="is('send')" class="step" v-on:click="sendApplayOffer()" to="/submitPage">
+        <i class="Arrow Circle Outline Right icon"></i>
+        <div class="content">
+          <div>Enviar</div>
+        </div>
       </router-link>
     </div>
   </div>
@@ -19,13 +53,17 @@
 <script>
 const ListOffer = require('./listOffers.vue');
 const StudentInformation = require('./studentInformation.vue');
+const SuggestionsOffer = require('./suggestionsOffer.vue');
+const SendOffer = require('./sendOffer.vue');
 import StudentService from '../../services/studentService';
 
 export default {
   name: 'AcademicOfferForm',
   components:{
     'list-offer': ListOffer,
-    'student-information':StudentInformation
+    'student-information':StudentInformation,
+    'suggestions-offer': SuggestionsOffer,
+    'send-offer': SendOffer
   },
   data(){
     return{
@@ -34,7 +72,9 @@ export default {
         offers: [],
         period: {}
       },
-      subjectName: ''
+      subjectName: '',
+      option: 'offer',
+      message: ''
     }
   },
 
@@ -73,8 +113,18 @@ export default {
           option: offer.selectedOption
         }
       });
+      applyOffers.message = this.message
       console.log("TODO: cambiar");
       console.log(applyOffers);
+    },
+    is(option){
+      return this.option === option
+    },
+    goTo(option){
+      return this.option = option
+    },
+    changeMessage(message){
+      this.message= message
     }
   }
 };
