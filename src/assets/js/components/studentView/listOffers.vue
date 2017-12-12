@@ -46,8 +46,6 @@
       updateCurrentData(){
         currentListData = this.filterListData();
         this.length = currentListData.length
-        console.log(this.currentPage)
-        console.log(this.length)
         this.currentPage = (this.length / this.amountInPage) > this.currentPage ? this.currentPage : 0
         var starts = this.currentPage * (this.amountInPage ? this.amountInPage : 0)
         var ends = starts + (this.amountInPage ? this.amountInPage : tableData.length)

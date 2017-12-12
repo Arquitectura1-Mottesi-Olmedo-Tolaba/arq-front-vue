@@ -147,8 +147,21 @@ var studentService = {
     return code === '12345' ? Promise.resolve() : Promise.reject(false);
   },
   fetchAcademicOffer: function(academicOfferCode){
-    //return Vue.http.get('http://localhost:3000/api/academicOffer');
-    return academicOfferCode === '12345' ? Promise.resolve(jsonResponse) : Promise.reject(false);
+    return Vue.http.get( this.getUrl() + '/services/surveys/getByCode/' + academicOfferCode);
+  },
+  sendOffer: function(code, surveyMatches, message){
+    var response = {
+      'code': code,
+      'surveyMatches': surveyMatches,
+      'message': message
+    };
+    return Vue.http.post( this.getUrl() + '/services/surveys/save', response)
+      .then(asd => console.log('pepe')
+      , asd => console.log('pepeasdasdjaklsdjlaksjdjlkasjdlkjas')
+    );
+  },
+  getUrl: function(){
+    return process.env.API || "http://localhost:3000"
   }
 }
 

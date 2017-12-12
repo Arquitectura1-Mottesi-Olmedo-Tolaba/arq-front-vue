@@ -21,7 +21,6 @@
     },
     methods: {
       emitMessage(currentMessage){
-        console.log(currentMessage)
         this.$emit('change', currentMessage)
       }
     },

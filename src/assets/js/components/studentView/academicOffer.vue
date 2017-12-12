@@ -74,11 +74,13 @@ export default {
       },
       subjectName: '',
       option: 'offer',
-      message: ''
+      message: '',
+      code: ''
     }
   },
 
   created: function(){
+    this.code = this.$route.params.id
     this.fetchAcademicOffer(this.$route.params.id);
   },
 
@@ -114,8 +116,7 @@ export default {
         }
       });
       applyOffers.message = this.message
-      console.log("TODO: cambiar");
-      console.log(applyOffers);
+      StudentService.sendOffer(this.code, applyOffers, this.message);
     },
     is(option){
       return this.option === option
