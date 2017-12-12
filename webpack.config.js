@@ -48,10 +48,10 @@ if (process.env.NODE_ENV === 'production') {
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
-            'process.env': {
-              NODE_ENV: process.env.NODE_ENV,
-              API: process.env.API
-            }
+          'process.env': {
+              NODE_ENV: '"production"',
+              API: "'https://arq-soft-unq.herokuapp.com'"
+          }
         }),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
