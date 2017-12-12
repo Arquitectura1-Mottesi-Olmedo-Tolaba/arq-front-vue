@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build": "cross-env NODE_ENV=production && API='https://arq-soft-unq.herokuapp.com' webpack --progress --hide-modules",
     "big-bang": "node ./src/assets/storage/bigBang.js",
     "gen-ac-of": "node ./src/assets/storage/generateAcademicOfferInformation.js"
   },
