@@ -147,7 +147,7 @@ var studentService = {
     return code === '12345' ? Promise.resolve() : Promise.reject(false);
   },
   fetchAcademicOffer: function(academicOfferCode){
-    return Vue.http.get( this.getUrl() + '/services/surveys/getByCode/' + academicOfferCode);
+    return Vue.http.get( this.getUrl() + '/services/students/getSurveyByCode/' + academicOfferCode);
   },
   sendOffer: function(code, surveyMatches, message){
     var response = {
@@ -155,7 +155,8 @@ var studentService = {
       'surveyMatches': surveyMatches,
       'message': message
     };
-    return Vue.http.post( this.getUrl() + '/services/surveys/save', response)
+    console.log(response);
+    return Vue.http.post( this.getUrl() + '/services/students/save', response)
       .then(asd => console.log('pepe')
       , asd => console.log('pepeasdasdjaklsdjlaksjdjlkasjdlkjas')
     );

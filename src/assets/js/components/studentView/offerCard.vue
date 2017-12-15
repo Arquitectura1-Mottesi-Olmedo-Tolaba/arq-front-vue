@@ -37,7 +37,7 @@ export default {
       return timelineArray.join(" | ")
     },
     stateButton(state, offer){
-      return state.id === offer.selectedOption.id ? "active" : "basic"
+      return state.description === offer.selectedOption.description ? "active" : "basic"
     },
     applyOption(option, offer){
       offer.selectedOption = option

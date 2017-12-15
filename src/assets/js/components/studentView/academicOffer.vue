@@ -23,7 +23,7 @@
       </a>
     </div>
     <div class="ui attached segment">
-      <list-offer v-if="is('offer')" :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='2'/>
+      <list-offer v-if="is('offer')" :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='8'/>
       <suggestions-offer v-if="is('suggestions')" :message="message" @change="changeMessage" :amountInPage='2'/>
       <send-offer v-if="is('send')" :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='2'/>
     </div>
@@ -40,7 +40,7 @@
           <div>Siguiente</div>
         </div>
       </a>
-      <router-link v-if="is('send')" class="step" v-on:click="sendApplayOffer()" to="/submitPage">
+      <router-link v-if="is('send')" class="step" v-on:click.native="sendApplayOffer()" to="/submitPage">
         <i class="Arrow Circle Outline Right icon"></i>
         <div class="content">
           <div>Enviar</div>
