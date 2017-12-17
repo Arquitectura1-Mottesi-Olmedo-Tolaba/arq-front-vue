@@ -1,6 +1,9 @@
 <template>
   <sui-form>
-    <h2>Log-in to your account</h2>
+    <h2>Log-in director</h2>
+    <sui-form-field v-if="showErrorMessage()">
+      <error-message title="Error" :message="this.errorMessage" />
+    </sui-form-field>
     <sui-form-field>
       <sui-input iconPosition="left" placeholder="E-mail" v-model="director.email" icon="user"/>
     </sui-form-field>
@@ -13,6 +16,7 @@
 
 <script>
   import LoginService from '../../services/loginService';
+  const ErrorMessage = require('../errorMessage.vue');
 
   export default{
     name: 'LoginForm',
@@ -21,11 +25,16 @@
         director: {
           email: '',
           password: ''
-        }
+        },
+        errorMessage: ''
       }
+    },
+    components:{
+      'error-message': ErrorMessage
     },
     methods: {
       login(){
+        this.errorMessage = ''
         new LoginService().login({
           email: this.director.email,
           password: this.director.password
@@ -35,7 +44,10 @@
         this.$router.push('/dashboard')
       },
       errorCallback(error){
-        console.log(error)
+        this.errorMessage = error.body.message
+      },
+      showErrorMessage(){
+        return this.errorMessage.length > 0
       }
     }
   }

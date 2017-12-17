@@ -1,7 +1,6 @@
 {
-  "name": "vuejs-crud-application",
-  "description": "A demo application to show how to build a crud application with VueJS",
-  "author": "Paulund",
+  "name": "arq-fron-vue",
+  "description": "View Arq-unq",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",

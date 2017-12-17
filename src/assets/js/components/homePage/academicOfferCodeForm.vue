@@ -1,6 +1,9 @@
 <template>
   <sui-form>
     <h2>Codigo oferta academica</h2>
+    <sui-form-field v-if="showErrorMessage()">
+      <error-message title="Error" :message="this.errorMessage" />
+    </sui-form-field>
     <sui-form-field>
       <sui-input iconPosition="left" placeholder="Codigo" v-model="student.code" icon="terminal"/>
     </sui-form-field>
@@ -10,25 +13,33 @@
 
 <script>
 import StudentService from '../../services/studentService';
+const ErrorMessage = require('../errorMessage.vue');
 
 export default {
   name: 'AcademicOfferCodeForm',
+  components:{
+    'error-message': ErrorMessage
+  },
   data(){
     return{
         student: {
           code: ''
-        }
+        },
+        errorMessage: ''
       }
     },
   methods: {
     submitStudentCode(){
-      StudentService.existCode(this.student.code, this.successRedirect, this.error);
+      StudentService.existCode(this.student.code, this.successCallback, this.errorCallback);
     },
-    successRedirect(){
+    successCallback(){
       this.$router.push('/academicOffer/' + this.student.code);
     },
-    error(){
-      console.log("error");
+    errorCallback(error){
+      this.errorMessage = error.body.message
+    },
+    showErrorMessage(){
+      return this.errorMessage.length > 0
     }
   }
 };

@@ -1,5 +1,6 @@
 <template lang="html">
   <div>
+    <error-message v-if="this.showErrorMessage()" title="Error" :message="this.errorMessage" />
     <student-information :information="this.information()" />
 
     <div class="ui three top attached steps">
@@ -40,12 +41,12 @@
           <div>Siguiente</div>
         </div>
       </a>
-      <router-link v-if="is('send')" class="step" v-on:click.native="sendApplayOffer()" to="/submitPage">
+      <a v-if="is('send')" class="step" v-on:click.native="sendApplayOffer()">
         <i class="Arrow Circle Outline Right icon"></i>
         <div class="content">
           <div>Enviar</div>
         </div>
-      </router-link>
+      </a>
     </div>
   </div>
 </template>
@@ -55,6 +56,7 @@ const ListOffer = require('./listOffers.vue');
 const StudentInformation = require('./studentInformation.vue');
 const SuggestionsOffer = require('./suggestionsOffer.vue');
 const SendOffer = require('./sendOffer.vue');
+const ErrorMessage = require('../errorMessage.vue');
 import StudentService from '../../services/studentService';
 
 export default {
@@ -63,7 +65,8 @@ export default {
     'list-offer': ListOffer,
     'student-information':StudentInformation,
     'suggestions-offer': SuggestionsOffer,
-    'send-offer': SendOffer
+    'send-offer': SendOffer,
+    'error-message': ErrorMessage
   },
   data(){
     return{
@@ -75,7 +78,8 @@ export default {
       },
       subjectName: '',
       option: 'offer',
-      code: ''
+      code: '',
+      errorMessage: ''
     }
   },
 
@@ -96,7 +100,7 @@ export default {
       StudentService.fetchAcademicOffer(academicOfferCode).then(
         response => this.academicOffer = response.body
       , response => {}
-      );
+      )
     },
     isNotApprovedSubjects(subject){
       return !this.academicOffer.student.approvedSubjects
@@ -114,9 +118,9 @@ export default {
           subject: offer.subject,
           option: offer.selectedOption
         }
-      });
+      })
       applyOffers.message = this.message
-      StudentService.sendOffer(this.code, applyOffers, this.message);
+      StudentService.sendOffer(this.code, applyOffers, this.message, this.successSendOffer, this.errorSendOffer);
     },
     is(option){
       return this.option === option
@@ -126,6 +130,15 @@ export default {
     },
     changeMessage(message){
       this.message= message
+    },
+    successSendOffer(){
+      this.$router.push('/submitPage')
+    },
+    errorSendOffer(error){
+      this.errorMessage = error.body.message
+    },
+    showErrorMessage(){
+      return this.errorMessage.length > 0
     }
   }
 };
