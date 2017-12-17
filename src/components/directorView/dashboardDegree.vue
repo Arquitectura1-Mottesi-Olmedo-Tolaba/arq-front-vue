@@ -9,7 +9,7 @@
         </sui-table-row>
       </sui-table-header>
       <sui-table-body>
-        <sui-table-row v-for="degree in degrees">
+        <sui-table-row v-for="degree in degrees" :key="degree.id">
           <sui-table-cell> {{degree.name}} </sui-table-cell>
           <sui-table-cell>
             <sui-button-group>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import DirectorService from '../../services/directorService';
+import DirectorService from '@/services/directorService';
 
 export default {
   name: 'DashboardDegree',

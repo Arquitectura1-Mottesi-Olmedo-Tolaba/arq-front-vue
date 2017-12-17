@@ -8,11 +8,11 @@
 </template>
 
 <script>
-  import DirectorService from '../../services/directorService';
-  const MenuDirector = require('./menuDirector.vue');
-  const DegreeList = require('./dashboardDegree.vue');
-  const DashboardAcademicOffer = require('./dashboardAcademicOffer.vue');
-
+  import DirectorService from '@/services/directorService';
+  import MenuDirector from '@/components/directorView/menuDirector.vue'
+  import DegreeList from '@/components/directorView/dashboardDegree.vue'
+  import DashboardAcademicOffer from '@/components/directorView/dashboardAcademicOffer.vue'
+  
   var page = "degree-list";
   var degreeID = 0;
 

@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.0cabd6f6a312ba1f652061a33cd66611.css"],"names":[],"mappings":"AACA,KACE,mBAAoB,AACpB,UAAY,CACb,AACD,MACE,gBAAiB,AACjB,YAAc,CACf","file":"app.0cabd6f6a312ba1f652061a33cd66611.css","sourcesContent":["\nbody{\n  background: #F5F5F5;\n  color: #333;\n}\n#page{\n  background: #FFF;\n  padding: 3rem;\n}\n"]}

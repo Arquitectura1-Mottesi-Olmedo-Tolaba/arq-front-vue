@@ -13,8 +13,8 @@
     <sui-table celled>
       <sui-table-header>
         <sui-table-row>
-          <sui-table-header-cell v-for="header in currentHeader" >
-            <span :data-tooltip="header.tooltip">{{header.title}} </span>
+          <sui-table-header-cell v-for="header in currentHeader">
+            <span :data-tooltip="header.tooltip">{{header.title}}</span>
             <a v-on:click="sorted(header)" v-if="header.sorted"><sui-icon :name="header.icon" /></a>
           </sui-table-header-cell>
         </sui-table-row>

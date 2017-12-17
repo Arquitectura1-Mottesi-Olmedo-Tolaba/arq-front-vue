@@ -12,8 +12,8 @@
 </template>
 
 <script>
-const AcademicOfferCodeForm = require('./academicOfferCodeForm.vue');
-const LoginForm = require('./loginForm.vue');
+import AcademicOfferCodeForm from '@/components/homePage/academicOfferCodeForm.vue'
+import LoginForm from '@/components/homePage/loginForm.vue'
 
 export default {
   name: 'HomePage',

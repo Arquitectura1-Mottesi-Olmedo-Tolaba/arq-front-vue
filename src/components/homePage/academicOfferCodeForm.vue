@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import StudentService from '../../services/studentService';
-const ErrorMessage = require('../errorMessage.vue');
+import StudentService from '@/services/studentService.js'
+import ErrorMessage from '@/components/errorMessage.vue'
 
 export default {
   name: 'AcademicOfferCodeForm',

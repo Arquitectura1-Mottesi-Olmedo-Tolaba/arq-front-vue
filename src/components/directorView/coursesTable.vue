@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  const DataTable = require('./datatable/datatable.vue')
+  import DataTable from '@/components/directorView/datatable/datatable.vue'
 
   var courses = 0;
 
