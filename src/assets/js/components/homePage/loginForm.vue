@@ -25,14 +25,17 @@
       }
     },
     methods: {
-      login: function(){
+      login(){
         new LoginService().login({
           email: this.director.email,
           password: this.director.password
-        }).then(
-          response => this.$router.push('/dashboard')
-          ,(response) => {}
-        );
+        }, this.successCallback, this.errorCallback)
+      },
+      successCallback(response){
+        this.$router.push('/dashboard')
+      },
+      errorCallback(error){
+        console.log(error)
       }
     }
   }

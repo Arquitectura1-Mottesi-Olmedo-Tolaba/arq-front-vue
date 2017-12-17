@@ -40,7 +40,7 @@ export default {
   methods: {
     fetchDegrees(){
       DirectorService.fetchDegrees().then(
-        response => this.degrees = response.body
+        response => this.degrees = response.body.degrees
       , response => {}
       )
     },

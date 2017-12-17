@@ -22,7 +22,7 @@ export default {
     },
   methods: {
     submitStudentCode(){
-      StudentService.existCode(this.student.code).then(this.successRedirect, this.error);
+      StudentService.existCode(this.student.code, this.successRedirect, this.error);
     },
     successRedirect(){
       this.$router.push('/academicOffer/' + this.student.code);

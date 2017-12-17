@@ -44,7 +44,7 @@
         })
       },
       currentData(amount){
-        return this.offers.reduce((array, offer)  => array.concat(this.createRows(amount, offer.info, offer.name)), [])
+        return this.offers.reduce((array, offer)  => array.concat(this.createRows(amount, offer.info, offer.subject.name)), [])
       },
       createRows(amount, info, subjectName){
         var object = { subject: subjectName };

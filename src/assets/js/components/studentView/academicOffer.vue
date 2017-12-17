@@ -24,7 +24,7 @@
     </div>
     <div class="ui attached segment">
       <list-offer v-if="is('offer')" :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='8'/>
-      <suggestions-offer v-if="is('suggestions')" :message="message" @change="changeMessage" :amountInPage='2'/>
+      <suggestions-offer v-if="is('suggestions')" :message="academicOffer.message" @change="changeMessage" :amountInPage='2'/>
       <send-offer v-if="is('send')" :listData="offers()" :searchFunction="this.searchFunction" :amountInPage='2'/>
     </div>
     <div class="ui bottom attached steps">
@@ -70,11 +70,11 @@ export default {
       academicOffer: {
         student: {},
         offers: [],
-        period: {}
+        period: {},
+        message: ''
       },
       subjectName: '',
       option: 'offer',
-      message: '',
       code: ''
     }
   },

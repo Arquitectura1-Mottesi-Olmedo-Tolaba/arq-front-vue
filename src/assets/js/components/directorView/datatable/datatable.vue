@@ -28,7 +28,7 @@
       </sui-table-body>
       <sui-table-footer v-if="amountInPage">
         <sui-table-row>
-          <sui-table-header-cell colspan="4">
+          <sui-table-header-cell :colspan="currentHeader.length">
             <sui-menu class="ui right floated pagination menu">
               <a is="sui-menu-item"
                 v-for="(item, index) in items"
