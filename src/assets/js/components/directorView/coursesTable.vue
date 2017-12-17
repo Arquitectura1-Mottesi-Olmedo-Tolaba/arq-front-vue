@@ -47,22 +47,22 @@
         return this.offers.reduce((array, offer)  => array.concat(this.createRows(amount, offer.info, offer.subject.name)), [])
       },
       createRows(amount, info, subjectName){
-        var object = { subject: subjectName };
+        var object = { subject: subjectName, ny: this.amountFor("Todavia no la voy a cursar", info)};
         if(info.length === 0) { } else {
-          var infoAux = info;
-          object['ny'] = infoAux.pop().amount;
           Array(amount).fill(1).forEach((value, index) => {
-            var key = 'c'+index;
-            object[key] = (info[index] ? ("" + info[index].amount + "/" + info[index].capacity) : " - ")
+            var key = 'c' + index;
+            object[key] = this.corseAmount(index + 1, info)
           })
         }
         return object
       },
-      createTotalCapacity(info){
-        return info.capacity ? info.amount + "/" + info.capacity : info.amount
+      amountFor(property, courseInformations){
+        return courseInformations.find(info => info.name === property).amount
       },
-      createAvailableCapacity(info){
-        return info.capacity ? info.capacity - info.amount : " - "
+      corseAmount(courseNumber, courseInformations){
+        var property = "Comision " + courseNumber
+        var course = courseInformations.find(info => info.name === property)
+        return course ? course.amount + "/" +  course.capacity : " - "
       },
       searchFun(data, text){
         return data.subject.toLowerCase().includes(text);
@@ -94,7 +94,13 @@
     },
     computed: {
       amount(){
-        return this.offers.reduce((res, offer) => offer.info.length -1 > res ? offer.info.length -1 : res, 0);
+        var howManyCourses = (courseInformations) => {
+          return courseInformations.reduce((res, info) => info.name.includes("Comision") ? res + 1 : res, 0);
+        }
+        return this.offers.reduce((res, offer) => {
+          var courses = howManyCourses(offer.info);
+          return courses > res ? courses : res
+        }, 0);
       },
       computedHeaders(){
         var amount = this.amount;

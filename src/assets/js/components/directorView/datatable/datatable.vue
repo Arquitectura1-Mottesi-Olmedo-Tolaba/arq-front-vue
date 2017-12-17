@@ -1,11 +1,11 @@
 <template lang="html">
   <div>
     <sui-grid>
-      <sui-grid-row>
+      <sui-grid-row >
         <sui-grid-column :width="10">
           <h2>{{title}}</h2>
         </sui-grid-column>
-        <sui-grid-column :width="3">
+        <sui-grid-column :width="6">
           <sui-input v-if="searchFunction" v-model="message" placeholder="busqueda" icon="search" />
         </sui-grid-column>
       </sui-grid-row>
