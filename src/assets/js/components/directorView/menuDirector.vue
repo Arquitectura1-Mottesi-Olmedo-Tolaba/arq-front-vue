@@ -11,13 +11,10 @@
 
   export default{
     name: 'MenuDirector',
-    props:['home', 'currentPage', 'goHome'],
+    props:['home', 'currentPage', 'goHome', 'logout'],
     methods: {
       currentPageIsHome(){
         return this.currentPage === this.home
-      },
-      logout(){
-        console.log("TODO: borrar cookie y ir a homePage")
       }
     }
   }

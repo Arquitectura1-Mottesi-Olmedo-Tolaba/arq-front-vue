@@ -1,6 +1,6 @@
 <template>
   <div>
-    <menu-director :home="'degree-list'" v-bind:currentPage="this.realPage" :goHome="this.goToHomePage"/>
+    <menu-director :home="'degree-list'" v-bind:currentPage="this.realPage" :goHome="this.goToHomePage" :logout="this.logout"/>
     <div class="ui segment">
       <component :is="currentView" v-bind="currentProperties"></component>
     </div>
@@ -8,6 +8,7 @@
 </template>
 
 <script>
+  import DirectorService from '../../services/directorService';
   const MenuDirector = require('./menuDirector.vue');
   const DegreeList = require('./dashboardDegree.vue');
   const DashboardAcademicOffer = require('./dashboardAcademicOffer.vue');
@@ -36,6 +37,10 @@
       goToAcademicOfferDashboard(degreeID){
         this.degreeID = degreeID
         this.changeCurrentPageTo('dashboard-academic-offer')
+      },
+      logout(){
+        DirectorService.logout()
+        this.$router.push('/')
       }
     },
     data(){
