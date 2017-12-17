@@ -41,7 +41,7 @@
           <div>Siguiente</div>
         </div>
       </a>
-      <a v-if="is('send')" class="step" v-on:click.native="sendApplayOffer()">
+      <a v-if="is('send')" class="step" v-on:click="sendApplayOffer()">
         <i class="Arrow Circle Outline Right icon"></i>
         <div class="content">
           <div>Enviar</div>
@@ -52,12 +52,12 @@
 </template>
 
 <script>
-const ListOffer = require('./listOffers.vue');
-const StudentInformation = require('./studentInformation.vue');
-const SuggestionsOffer = require('./suggestionsOffer.vue');
-const SendOffer = require('./sendOffer.vue');
-const ErrorMessage = require('../errorMessage.vue');
-import StudentService from '../../services/studentService';
+import ListOffer from '@/components/studentView/listOffers.vue'
+import StudentInformation from '@/components/studentView/studentInformation.vue'
+import SuggestionsOffer from '@/components/studentView/suggestionsOffer.vue'
+import SendOffer from '@/components/studentView/sendOffer.vue'
+import ErrorMessage from '@/components/errorMessage.vue'
+import StudentService from '@/services/studentService.js'
 
 export default {
   name: 'AcademicOfferForm',
@@ -119,6 +119,7 @@ export default {
           option: offer.selectedOption
         }
       })
+      console.log("pepe")
       applyOffers.message = this.message
       StudentService.sendOffer(this.code, applyOffers, this.message, this.successSendOffer, this.errorSendOffer);
     },

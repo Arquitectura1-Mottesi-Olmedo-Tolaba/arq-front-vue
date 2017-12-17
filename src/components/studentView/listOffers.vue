@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  const OfferCard = require('./offerCard.vue');
+  import OfferCard from '@/components/studentView/offerCard.vue'
 
   var currentListData = []
 

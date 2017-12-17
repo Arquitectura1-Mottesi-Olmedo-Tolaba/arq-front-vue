@@ -30,7 +30,7 @@ export default {
   props:['offer'],
   methods: {
     eachTimeline(timeline){
-      return timeline.day + " desde las "+ timeline.start + " hasta " + timeline.end
+      return timeline.dayTime + " desde las "+ timeline.startTime + " hasta " + timeline.endTime
     },
     createTimeline(timeline){
       var timelineArray =  timeline.map(each => this.eachTimeline(each));

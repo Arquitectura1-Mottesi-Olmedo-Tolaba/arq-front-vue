@@ -27,12 +27,11 @@
 </template>
 
 <script>
-const CoursesTable = require('./coursesTable.vue');
-const AcademicOfferPercentage = require('./academicOfferPercentage.vue');
-const CloseAcademicOffer = require('./closeAcademicOffer.vue');
-const SendEmail = require('./sendEmail.vue');
-
-import DirectorService from '../../services/directorService';
+import CoursesTable from '@/components/directorView/coursesTable.vue'
+import AcademicOfferPercentage from '@/components/directorView/academicOfferPercentage.vue'
+import CloseAcademicOffer from '@/components/directorView/closeAcademicOffer.vue'
+import SendEmail from '@/components/directorView/sendEmail.vue'
+import DirectorService from '@/services/directorService';
 
 export default {
   name: 'DashboardAcademicOffer',
