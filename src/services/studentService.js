@@ -18,7 +18,7 @@ var studentService = {
       .then(successCallback, errorCallback)
   },
   getUrl: function(){
-    return process.env.API || "http://localhost:3000/arqsoft-mottesi_olmedo_tolaba"
+    return process.env.API //|| "http://localhost:3000/arqsoft-mottesi_olmedo_tolaba"
   }
 }
 
