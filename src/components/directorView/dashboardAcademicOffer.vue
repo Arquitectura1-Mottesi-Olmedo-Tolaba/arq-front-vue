@@ -13,7 +13,7 @@
             </div>
             <sui-divider />
             <div>
-              <academic-offer-percentage :studentInformation="academicOffer.studentInformation" />
+              <academic-offer-percentage :studentInformation="academicOffer.studentInformationDTO" />
             </div>
             <sui-divider />
             <div>
@@ -45,7 +45,7 @@ export default {
   data(){
     return{
       academicOffer: {
-        studentInformation: {},
+        studentInformationDTO: {},
         day: {},
         offers: [],
         name: ""
